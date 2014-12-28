@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>RocketLaunches - Index of Rocket Launches around the world</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800' rel='stylesheet' type='text/css'>
+	<link href='{{ STATIC_URL }}styles/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script type="text/template" id="view-app">
+	  	<h1>RocketLaunches</h1>
+	  	<h2>Keep track of Rocket Launches around the world</h2>
+	</script>
+
+	<script src='{{ STATIC_URL }}scripts/vendor/jquery.js'></script>
+	<script src='{{ STATIC_URL }}scripts/vendor/underscore.min.js'></script>
+	<script src='{{ STATIC_URL }}scripts/vendor/backbone.min.js'></script>
+	<script src='{{ STATIC_URL }}scripts/vendor/backbone.marionette.min.js'></script>
+	<script src='{{ STATIC_URL }}app/app.js'></script>
+</body>
+</html>
