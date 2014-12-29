@@ -13,6 +13,63 @@
 	<script type="text/template" id="view-app">
 	  	<h1>RocketLaunches</h1>
 	  	<h2>Keep track of Rocket Launches around the world</h2>
+	  	<a href="">Add Launch</a>
+	  	<div id="grid-launches"</div>
+	</script>
+
+	<script type="text/template" id="view-launches">
+	  	<table class="grid launch-grid">
+	  		<tr class="header row">
+	  			<th class="col-1-8">
+	  				Type
+		  		</th>
+		  		<th class="col-1-8">
+		  			Vehicle
+		  		</th>
+		  		<th class="col-1-8">
+		  			Date/Time
+		  		</th>
+		  		<th class="col-1-8">
+		  			Payload
+		  		</th>
+		  		<th class="col-1-8">
+		  			Remarks
+		  		</th>
+		  		<th class="col-1-8">
+		  			Country
+		  		</th>
+	  			<th class="col-1-8">
+		  			Status
+		  		</th>
+	  		</tr>
+	  		<tbody>
+
+	  		</tbody>
+	  	</table>
+	</script>
+
+	<script type="text/template" id="view-launch-row">
+  			<td class="col-1-8">
+  				<%=name%>
+	  		</td>
+	  		<td class="col-1-8">
+	  			
+	  		</td>
+	  		<td class="col-1-8">
+	  			<%=launch_date%>
+	  		</td>
+	  		<td class="col-1-8">
+	  			
+	  		</td>
+	  		<td class="col-1-8">
+	  			
+	  		</td>
+	  		<td class="col-1-8">
+	  			
+	  		</td>
+  			<td class="col-1-8">
+	  			
+	  		</td>
 	</script>
 
 	<script src='{{ STATIC_URL }}scripts/vendor/jquery.js'></script>
