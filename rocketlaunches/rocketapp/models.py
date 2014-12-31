@@ -1,16 +1,68 @@
 from django.db import models
 from datetime import datetime, date
 
+class Rocket(models.Model):
+	name = models.CharField(max_length=200)
+	stages = models.IntegerField()
+	height = models.DecimalField(max_digits=8, decimal_places=2)
+	mass = models.DecimalField(max_digits=8, decimal_places=2)
+	diameter = models.DecimalField(max_digits=8, decimal_places=2)
+	cost = models.DecimalField(max_digits=15, decimal_places=2)
+	cost_year = models.IntegerField()
+	payload_to_leo = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+	payload_to_gto = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+	payload_to_sso = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+	status = models.CharField(max_length=200)
+	first_flight_date = models.DateTimeField(blank=True, null=True)
+	wiki_url = models.CharField(max_length=1000)
+	manufacturer = models.CharField(max_length=1000),
+	manufacturer_url = models.CharField(max_length=1000)
+	rocket_function = models.CharField(max_length=1000)
+	description = models.CharField(max_length=1000)
+	country = models.CharField(max_length=10, blank=False)
+	created_date = models.DateTimeField('date created', default=datetime.now())
+	updated_date = models.DateTimeField('date updated', blank=True, null=True)
+
+	def __str__(self):
+		return self.name
+
+	def as_dict(self):
+		return dict(
+			country = self.country,
+			name = self.name,
+			manufacturer = str(self.manufacturer)
+		)
+
 class Launch(models.Model):
-	name = models.CharField(max_length=500)
+	country = models.CharField(max_length=10, blank=False, null=False, default='')
+	rocket = models.ForeignKey(Rocket, default='')
+	remarks = models.CharField(max_length=2000, blank=True, null=True)
+	customer = models.CharField(max_length=2000, blank=True, null=True)
+	customer_url = models.CharField(max_length=2000, blank=True, null=True)
+	payload = models.CharField(max_length=2000, blank=True, null=True)
+	status = models.CharField(max_length=2000, blank=False, null=False, default='')
+	status_url = models.CharField(max_length=2000, blank=True, null=True)
+	launch_url = models.CharField(max_length=2000, blank=True, null=True)
+	orbit = models.CharField(max_length=100, blank=True, null=True)
 	launch_date = models.DateTimeField('date launched', blank=True, null=True)
 	created_date = models.DateTimeField('date created', default=datetime.now())
 	updated_date = models.DateTimeField('date updated', blank=True, null=True)
 
+	def __str__(self):
+		return self.rocket.name + " " + str(self.launch_date)
+
 	def as_dict(self):
 	        return dict(
-		        name = self.name, 
-		        launch_date = self.launch_date,
+		        country = self.country,
+		        rocket = self.rocket.as_dict(),
+		        remarks = self.remarks,
+		        payload = self.payload,
+		        status = self.status,
+		        status_url = self.status_url,
+		        launch_url = self.launch_url,
+		        orbit = self.orbit,
+		        launch_date = str(self.launch_date),
 		        created_date = str(self.created_date),
 		        updated_date = str(self.updated_date)
 	        )
+	

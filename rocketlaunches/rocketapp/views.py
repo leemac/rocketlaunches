@@ -12,7 +12,7 @@ def index(request):
 def launches(request):
    if request.method == 'GET':
    		# Get the objects from the database
-   		rawData = Launch.objects.all()
+   		rawData = Launch.objects.all().order_by('-launch_date')
 
    		# Create array
    		json_res = []

@@ -1,0 +1,47 @@
+[
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 1,
+		"fields" : {
+			"name" : "Falcon 1",
+			"height" : 21.3,
+			"diameter" : 1.7,
+			"mass" : 38555,
+			"stages" : 2,
+			"payload_to_leo" : 180,
+			"payload_to_sso" : 430,
+			"status" : "Retired",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Falcon_1",
+			"country" : "us",
+			"rocket_function" : "Orbital Launch Vehicle",
+			"cost" : 6400000,
+			"cost_year" : 2009,
+			"first_flight_date" : "2006-03-24",
+			"manufacturer" : "SpaceX",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/SpaceX"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 2,
+		"fields" : {
+			"name" : "Falcon 9 v.1.1",
+			"height" : 68.4,
+			"diameter" : 3.66,
+			"mass" : 505846,
+			"stages" : 2,
+			"payload_to_leo" : 13150,
+			"payload_to_gto" : 4850,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Falcon_9_v1.1",
+			"country" : "us",
+			"rocket_function" : "Orbital Launch Vehicle",
+			"cost" : 61200000,
+			"cost_year" : 2014,
+			"first_flight_date" : "2013-09-23",
+			"manufacturer" : "SpaceX",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/SpaceX"
+
+		}
+	}
+]
