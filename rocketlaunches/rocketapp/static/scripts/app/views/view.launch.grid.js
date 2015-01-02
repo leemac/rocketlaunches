@@ -2,13 +2,12 @@ define([
 	'jquery',
 	'backbone',
 	'marionette',
-	'app/collections/launch',
-	'app/views/view.launch.grid.collection',
+	'app/views/view.launch.row',
 	'text!app/templates/launch.grid.html',
 	'bootstrap',
 	'vendor/jquery.fancybox.pack',
 	'vendor/jquery.fancybox.media'
-	], function($, Backbone, Marionette, LaunchCollection, GridCollectionView, viewHtml){
+	], function($, Backbone, Marionette, LaunchRowView, viewHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({
 			template: function() {
