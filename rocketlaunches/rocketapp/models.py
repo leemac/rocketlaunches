@@ -15,7 +15,7 @@ class Rocket(models.Model):
 	status = models.CharField(max_length=200)
 	first_flight_date = models.DateTimeField(blank=True, null=True)
 	wiki_url = models.CharField(max_length=1000)
-	manufacturer = models.CharField(max_length=1000),
+	manufacturer = models.CharField(max_length=1000)
 	manufacturer_url = models.CharField(max_length=1000)
 	rocket_function = models.CharField(max_length=1000)
 	description = models.CharField(max_length=1000)
@@ -47,22 +47,3 @@ class Launch(models.Model):
 	launch_date = models.DateTimeField('date launched', blank=True, null=True)
 	created_date = models.DateTimeField('date created', default=datetime.now())
 	updated_date = models.DateTimeField('date updated', blank=True, null=True)
-
-	def __str__(self):
-		return self.rocket.name + " " + str(self.launch_date)
-
-	def as_dict(self):
-	        return dict(
-		        country = self.country,
-		        rocket = self.rocket.as_dict(),
-		        remarks = self.remarks,
-		        payload = self.payload,
-		        status = self.status,
-		        status_url = self.status_url,
-		        launch_url = self.launch_url,
-		        orbit = self.orbit,
-		        launch_date = str(self.launch_date),
-		        created_date = str(self.created_date),
-		        updated_date = str(self.updated_date)
-	        )
-	

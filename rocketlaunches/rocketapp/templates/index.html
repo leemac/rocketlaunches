@@ -20,7 +20,6 @@
 
 	<script type="text/template" id="view-app">
 
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,7 +32,7 @@
             <li class="active"><a class="nav-home" href="#">Home</a></li>
             <li><a class="nav-about" href="#/about">About</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 
@@ -46,10 +45,10 @@
 	  	<hr />
 
 		<footer class="footer">
-			2015 - RocketLaunches | Sources: Wikipedia - This site is intended for educational/entertainment purposes only.
+			Data is gathered from Wikipedia, NASA, SpaceX and/or News Outlets - This site is intended for educational/entertainment purposes only.
 		</footer>
 
-    </div> <!-- /container -->
+    </div>
 
 
 	</script>
@@ -60,7 +59,45 @@
 	</script>
 
 	<script type="text/template" id="view-about">
-		<h2>About</h2>
+		<div id="page-about">
+			<h2>About</h2>
+
+			<div class="row">
+				<div class="col-md-7">
+					<p><a href="http://RocketLaunches.net">RocketLaunches.net</a> aims to provide visitors with information regarding Rocket Launches around the world. Commercial space flight is slowly gaining traction that will inspire all of us to push humanity into the final frontier.</p>
+
+					<p>This site was created by <a href="http://leemckinnon.com">Lee McKinnon</a> (that''s me). I created this site after many years of begin fascinated by space travel and the technology behind it. I wanted to start this project as I saw an opportunity to create a one-stop-shop for all things rocket launches.</p>
+
+					<p>It was developed entirely during Christmas week of 2014 and it went public in January 2015.</p>
+
+					<p>I will carefully update the data over time and will add features as requested. The source of the data varies from all over the web.</p>
+
+				</div>
+				<div class="col-md-5">
+					<img src="{{ STATIC_URL }}images/orion.jpg" />
+				</div>
+			</div>
+
+			<hr/>
+
+			<div class="text-center"><h3>RocketLaunches is powered by...</h3></p>
+			
+			<div class="text-center">
+				<img src="{{ STATIC_URL }}images/tech/marionette.png" />
+				<img src="{{ STATIC_URL }}images/tech/backbone.png" />
+				<img src="{{ STATIC_URL }}images/tech/bootstrap.png" />
+			</div>	
+			<hr/>
+			<div class="text-center">
+				<img src="{{ STATIC_URL }}images/tech/python.png" />
+				<img src="{{ STATIC_URL }}images/tech/django.png" />
+				<img src="{{ STATIC_URL }}images/tech/nginx.png" />
+			</div>
+			<hr/>
+			<div class="text-center">
+				<img src="{{ STATIC_URL }}images/tech/linode.png" />
+			</div>
+		</div>
 	</script>
 
 
@@ -97,13 +134,13 @@
 
 	<script type="text/template" id="view-launch-row">
 		<td>
-			<a  href="#" class="rocket-name"><%=rocket.name%></a>
+			<a  href="#" class="rocket-name"><%=rocket_name%></a>
   		</td>
   		<td class="moment-me">
-  			<%=launch_date_human%>
+  			<%=launch_date%>
   		</td>
   		<td>
-  			<%=rocket.manufacturer%>
+  			<%=rocket_manufacturer%>
   		</td>
   		<td>
   			<%=payload%>

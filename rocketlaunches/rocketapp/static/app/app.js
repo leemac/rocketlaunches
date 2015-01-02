@@ -1,25 +1,12 @@
 RocketApp = new Backbone.Marionette.Application();
 
 RocketApp.addRegions({
-  appRegion: "#app",
-  contentRegion: "#content"
+  appRegion: "#app"
 });
 
 RocketApp.addInitializer(function(options){
-  RocketApp.AppRouter = new AppRouter();
-
   var appView = new AppView();
   RocketApp.appRegion.show(appView);
-
-  RocketApp.AppRouter.on('route:home', function(actions) {        
-      var view = new HomeView();
-      RocketApp.contentRegion.show(view);
-  });
-
-  RocketApp.AppRouter.on('route:about', function(actions) {        
-      var view = new AboutView();
-      RocketApp.contentRegion.show(view);
-  });
 
   Backbone.history.start(); 
 });
@@ -31,23 +18,47 @@ Helpers = {
   }
 }
 
-/* Views */
+/* Layouts */
 
-AppView = Backbone.Marionette.CompositeView.extend({
+AppView = Backbone.Marionette.LayoutView.extend({
   template: "#view-app",
-  tagName: 'div'
+  tagName: 'div',
+  regions: {    
+    contentRegion: "#content"
+  },
+  initialize: function () {
+      this.router = new AppRouter();
+
+      var ref = this;
+
+      this.router.on('route:home', function(actions) {        
+        var view = new HomeView();
+        ref.contentRegion.show(view);
+      });
+
+      this.router.on('route:about', function(actions) {        
+        var view = new AboutView();
+        ref.contentRegion.show(view);
+      });
+  }
 });
+
+/* Views */
 
 LaunchRowView = Backbone.Marionette.ItemView.extend({
   template: "#view-launch-row",
   tagName: 'tr'
 });
 
-HomeView = Backbone.Marionette.ItemView.extend({
+HomeView = Backbone.Marionette.LayoutView.extend({
   template: "#view-home",
   tagName: 'div',
+  regions: {
+    gridRegion: "#grid-launches"
+  },
   onRender: function () {
-    this.gridView = new GridView();
+    var gridView = new GridView();
+    this.gridRegion.show(gridView);
   }
 });
 

@@ -13,13 +13,5 @@ def launches(request):
    if request.method == 'GET':
    		# Get the objects from the database
    		rawData = Launch.objects.all().order_by('-launch_date')
-
-   		# Create array
-   		json_res = []
-
-   		# Iterate over results and add to array
-   		for record in rawData: 
-   			json_res.append(record.as_dict())
-
-		# Return the results   		
-   		return HttpResponse(json.dumps(json_res), content_type='application/json')
+		   
+   		return HttpResponse(serializers.serialize('json', rawData), content_type='application/json')
