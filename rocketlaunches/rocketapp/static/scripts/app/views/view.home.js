@@ -14,8 +14,20 @@ define([
 				gridRegion: "#grid-launches"
 			},
 			onRender: function () {
-				var gridView = new GridView();
-				this.gridRegion.show(gridView);
+
+				var launchCollection = new LaunchCollection();
+				
+				var ref = this;
+
+				launchCollection.fetch({
+					success: function () {
+						var gridView = new GridView({
+							collection: launchCollection
+						});
+
+						ref.gridRegion.show(gridView);
+					}
+				});
 			}
 		});
 
