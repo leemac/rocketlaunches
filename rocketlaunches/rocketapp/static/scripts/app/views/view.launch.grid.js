@@ -1,10 +1,14 @@
 define([
+	'jquery',
 	'backbone',
 	'marionette',
 	'app/collections/launch',
 	'app/views/view.launch.row',
-	'text!app/templates/launch.grid.html'
-	], function(Backbone, Marionette, LaunchCollection, LaunchRowView, viewHtml){
+	'text!app/templates/launch.grid.html',
+	'bootstrap',
+	'vendor/jquery.fancybox.pack',
+	'vendor/jquery.fancybox.media'
+	], function($, Backbone, Marionette, LaunchCollection, LaunchRowView, viewHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({
 			template: function () {
@@ -43,14 +47,16 @@ define([
 							$(this).html("<img src='static/images/video_providers/" + provider + ".png' style='width: 30px' title='Click to watch this launch!' />");
 						});
 
-						//$(".fancybox").fancybox({
-						//	helpers : {
-						//		media: true
-						//	},
-						//	youtube : {
-						//		autoplay: 1
-						//	}
-						//});
+						$(".fancybox").fancybox({
+							helpers : {
+								media: true
+							},
+							youtube : {
+								autoplay: 1
+							}
+						});
+
+						$('[data-toggle="tooltip"]').tooltip();
 					},
 					error: function (collection, response, options) {
 

@@ -1,23 +1,32 @@
 <td>
-	<a href="#/rockets/<%=id%>" class="rocket-name"><%=rocket_name%></a>
+	<%=rocket_name%>
+	<% if(remarks) { %>
+		<span class="text-info" data-toggle="tooltip" title="" data-original-title="<%=remarks%>"><i class="fa fa-lightbulb-o"></i></span>
+	<% } %>
 </td>
 <td>
 	<%=launch_date_human%>
+	<% if(is_close) { %>
+		<span class="text-warning" data-toggle="tooltip" title="" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
+	<% } %>
 </td>
 <td>
 	<%=rocket_manufacturer%>
 </td>
 <td>
+	<%=orbit%>
+</td>
+<td>
 	<%=payload%>
 </td>
-<td class="align-center">
-	<img src="{{ STATIC_URL }}images/flags/<%=country%>.png" />
+<td class="text-center">
+	<img src="static/images/flags/<%=country%>.png" />
 </td>
 <td class="status-<%=status%>">
 	<%=status%>
 </td>
-<td class="align-center">
+<td class="text-center">
 	<% if (launch_url) { %>
-	<a href="<%=launch_url%>" rel="group" class="fancybox video-link"></a>
+	<a href="<%=launch_url%>" class="fancybox video-link"></a>
 	<% } %>
 </td>

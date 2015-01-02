@@ -3,6 +3,11 @@ define(['backbone', 'moment'], function(Backbone){
 		convert_to_human: function (date)
 		{
 			return moment(date, "YYYY-MM-DD h:mm:ss a").fromNow();
+		},
+		daysBetween: function (date1, date2)
+		{
+			var diff = Math.abs(date1.getTime() - date2.getTime());
+			return diff / (1000 * 60 * 60 * 24);
 		}
 	}
 
@@ -10,8 +15,25 @@ define(['backbone', 'moment'], function(Backbone){
 		initialize: function(){
 			var launch_date = this.get("launch_date");
 
-			if(launch_date)
+			if(launch_date)	{
 				this.set("launch_date_human", Helpers.convert_to_human(launch_date));
+
+				var now = new Date();
+				var then = new Date(launch_date);
+				if(now < then) {
+					var daysFromNow = Helpers.daysBetween(then, now);
+
+					if(daysFromNow <= 5)
+						this.set("is_close", true);
+					else						
+						this.set("is_close", false);
+				}
+				else
+					this.set("is_close", false);
+
+			}
+
+
 		}
 	});
 
