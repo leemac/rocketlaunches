@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from rest_framework import routers
 
-from rocketlaunches.serializers import LaunchViewSet, RocketViewSet
+from rocketlaunches.viewsets import LaunchViewSet, RocketViewSet
 
 from rocketapp import views
 

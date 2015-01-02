@@ -1,0 +1,12 @@
+/* TEAM */
+           
+RocketLaunches.net                            
+Site: http://leemckinnon.com                            
+Twitter: @leemak
+                          
+/* SITE */
+                            
+Last update: YYYY/MM/DD                             
+Standards: HTML5, CSS3                           
+Components: Bootstrap, BackboneJS, UnderscoreJS, JQuery, Django,                            
+Software: Django

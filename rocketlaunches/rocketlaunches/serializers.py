@@ -1,8 +1,6 @@
-from rest_framework import routers, serializers, viewsets
+from rest_framework import serializers
 
 from rocketapp.models import Rocket, Launch
-
-# Launch
 
 class LaunchSerializer(serializers.ModelSerializer):
 	rocket_name = serializers.ReadOnlyField(source='rocket.name')
@@ -11,6 +9,7 @@ class LaunchSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Launch
 		fields = (
+			'id',
 			'remarks', 
 			'status', 
 			'orbit', 
@@ -21,17 +20,7 @@ class LaunchSerializer(serializers.ModelSerializer):
 			'launch_date',
 			'rocket_manufacturer')
 
-class LaunchViewSet(viewsets.ModelViewSet):
-	queryset = Launch.objects.all()
-	serializer_class = LaunchSerializer
-
-# Rocket
-
 class RocketSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Rocket
 		fields = ('name', 'stages', 'height')
-
-class RocketViewSet(viewsets.ModelViewSet):
-	queryset = Rocket.objects.all()
-	serializer_class = RocketSerializer

@@ -1,0 +1,23 @@
+<td>
+	<a href="#/rockets/<%=id%>" class="rocket-name"><%=rocket_name%></a>
+</td>
+<td>
+	<%=launch_date_human%>
+</td>
+<td>
+	<%=rocket_manufacturer%>
+</td>
+<td>
+	<%=payload%>
+</td>
+<td class="align-center">
+	<img src="{{ STATIC_URL }}images/flags/<%=country%>.png" />
+</td>
+<td class="status-<%=status%>">
+	<%=status%>
+</td>
+<td class="align-center">
+	<% if (launch_url) { %>
+	<a href="<%=launch_url%>" rel="group" class="fancybox video-link"></a>
+	<% } %>
+</td>

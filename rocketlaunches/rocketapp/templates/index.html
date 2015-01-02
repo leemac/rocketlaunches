@@ -9,168 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800' rel='stylesheet' type='text/css'>-->
+	<link type="text/plain" rel="author" href="http://rocketlaunches.net/humans.txt" />
+	
 	<link href='{{ STATIC_URL }}styles/bootstrap.min.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/jquery.fancybox.css' rel='stylesheet' type='text/css'>
+	<link href='{{ STATIC_URL }}styles/font-awesome.min.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/style.css' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 	<div id="app"></div>
 
-	<script type="text/template" id="view-app">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-          	RocketLaunches
-          </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a class="nav-home" href="#">Home</a></li>
-            <li><a class="nav-about" href="#/about">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-
-	 	<div id="content">
-	  		
-	  	</div>
-
-	  	<hr />
-
-		<footer class="footer">
-			Data is gathered from Wikipedia, NASA, SpaceX and/or News Outlets - This site is intended for educational/entertainment purposes only.
-		</footer>
-
-    </div>
-
-
-	</script>
-
-	<script type="text/template" id="view-home">
-		<h2>Home</h2>
-		<div id="grid-launches"></div>
-	</script>
-
-	<script type="text/template" id="view-about">
-		<div id="page-about">
-			<h2>About</h2>
-
-			<div class="row">
-				<div class="col-md-7">
-					<p><a href="http://RocketLaunches.net">RocketLaunches.net</a> aims to provide visitors with information regarding Rocket Launches around the world. Commercial space flight is slowly gaining traction that will inspire all of us to push humanity into the final frontier.</p>
-
-					<p>This site was created by <a href="http://leemckinnon.com">Lee McKinnon</a> (that''s me). I created this site after many years of begin fascinated by space travel and the technology behind it. I wanted to start this project as I saw an opportunity to create a one-stop-shop for all things rocket launches.</p>
-
-					<p>It was developed entirely during Christmas week of 2014 and it went public in January 2015.</p>
-
-					<p>I will carefully update the data over time and will add features as requested. The source of the data varies from all over the web.</p>
-
-				</div>
-				<div class="col-md-5">
-					<img src="{{ STATIC_URL }}images/orion.jpg" />
-				</div>
-			</div>
-
-			<hr/>
-
-			<div class="text-center"><h3>RocketLaunches is powered by...</h3></p>
-			
-			<div class="text-center">
-				<img src="{{ STATIC_URL }}images/tech/marionette.png" />
-				<img src="{{ STATIC_URL }}images/tech/backbone.png" />
-				<img src="{{ STATIC_URL }}images/tech/bootstrap.png" />
-			</div>	
-			<hr/>
-			<div class="text-center">
-				<img src="{{ STATIC_URL }}images/tech/python.png" />
-				<img src="{{ STATIC_URL }}images/tech/django.png" />
-				<img src="{{ STATIC_URL }}images/tech/nginx.png" />
-			</div>
-			<hr/>
-			<div class="text-center">
-				<img src="{{ STATIC_URL }}images/tech/linode.png" />
-			</div>
-		</div>
-	</script>
-
-
-	<script type="text/template" id="view-launches">
-	  	<table  class="table table-condensed table-hover table-striped launches">
-	  		<tr>
-	  			<th>
-	  				Vehicle
-		  		</th>
-		  		<th>
-		  			Date/Time
-		  		</th>
-		  		<th>
-		  			Manufacturer
-		  		</th>
-	  			<th>
-		  			Payload
-		  		</th>
-		  		<th class="align-center">
-		  			Country
-		  		</th>
-	  			<th>
-		  			Status
-		  		</th>
-	  			<th class="align-center">
-		  			Launch Video
-		  		</th>
-	  		</tr>
-	  		<tbody>
-
-	  		</tbody>
-	  	</table>
-	</script>
-
-	<script type="text/template" id="view-launch-row">
-		<td>
-			<a  href="#" class="rocket-name"><%=rocket_name%></a>
-  		</td>
-  		<td class="moment-me">
-  			<%=launch_date%>
-  		</td>
-  		<td>
-  			<%=rocket_manufacturer%>
-  		</td>
-  		<td>
-  			<%=payload%>
-  		</td>
-  		<td class="align-center">
-  			<img src="{{ STATIC_URL }}images/flags/<%=country%>.png" />
-  		</td>
-		<td class="status-<%=status%>">
-  			<%=status%>
-  		</td>
-		<td class="align-center">
-			<% if (launch_url) { %>
-				<a href="<%=launch_url%>" rel="group" class="fancybox video-link"></a>
-			<% } %>
-  		</td>
-	</script>
-
-	<script type="text/template" id="view-launch-dashboard">
-		launch dashboard!
-	</script>
-
-	<script src='{{ STATIC_URL }}scripts/vendor/jquery.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/underscore.min.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/backbone.min.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/backbone.marionette.min.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/jquery.mousewheel-3.0.6.pack.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/jquery.fancybox.pack.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/jquery.fancybox.media.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/moment.js'></script>
-	<script src='{{ STATIC_URL }}scripts/vendor/bootstrap.min.js'></script>
-	<script src='{{ STATIC_URL }}app/app.js'></script>
+	<script data-main="{{ STATIC_URL }}scripts/main" src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
 </body>
 </html>
