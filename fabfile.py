@@ -6,7 +6,7 @@ def deploy():
     with cd(code_dir):
         run("git pull origin master")    
         run('sudo pip install -r requirements.txt')      
-        run('python manage.py syncdb --noinput')      
+        run('python rocketlaunches/manage.py migrate')      
 
 # Start, Restart, stop
 
