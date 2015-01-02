@@ -1,4 +1,4 @@
-from jobsite.settings.base import *
+from rocketlaunches.settings.base import *
 
 DEBUG = False
 
