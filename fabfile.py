@@ -4,7 +4,7 @@ from fabric.api import *
 def deploy():
     code_dir = '/srv/www/rocketlaunches.org'
     with cd(code_dir):
-        run("git pull")    
+        run("git pull origin master")    
         run('sudo pip install -r requirements.txt')      
         run('python manage.py syncdb --noinput')      
 
