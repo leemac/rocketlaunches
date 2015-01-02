@@ -13,7 +13,7 @@ def deploy():
 def start_server():
     run_dir = '/srv/www/rocketlaunches.org'
     with cd(run_dir):
-        run("uwsgi --ini rocketapp.ini")   
+        run("uwsgi --ini rocketlaunches/rocketapp.ini")   
 
 def restart_server():
     run_dir = '/srv/www/'
@@ -23,4 +23,4 @@ def restart_server():
 def stop_server():
     run_dir = '/srv/www/'
     with cd(run_dir):
-        run("uwsgi --stop /tmp/rocketlaunches.org/rocketlaunches.org")    
+        run("uwsgi --stop /tmp/rocketlaunches.org/rocketlaunches.pid")    
