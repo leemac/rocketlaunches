@@ -11,6 +11,7 @@
 
 	<link type="text/plain" rel="author" href="http://rocketlaunches.net/humans.txt" />
 	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,400,700,600' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/bootstrap.min.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/jquery.fancybox.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/font-awesome.min.css' rel='stylesheet' type='text/css'>
@@ -20,6 +21,13 @@
 <body>
 	<div id="app"></div>
 
+	{% if not debug %}
+	<script src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
+	<script src="{{ STATIC_URL }}dist/app.js"></script>
+	{% endif %}
+
+	{% if debug %}
 	<script data-main="{{ STATIC_URL }}scripts/main" src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
+	{% endif %}
 </body>
 </html>

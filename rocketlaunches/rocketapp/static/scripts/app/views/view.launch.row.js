@@ -1,6 +1,6 @@
 define([
 	'marionette',
-	'text!app/templates/launch.row.html',
+	'text!app/templates/launch.row.html'
 	], function(Marionette, ViewHtml){
 
 		LaunchRowView = Backbone.Marionette.ItemView.extend({

@@ -1,4 +1,5 @@
 body {
+	font-family: 'Open Sans', sans-serif;
 	min-height: 2000px;
 	padding-top: 70px;
 }
@@ -69,4 +70,10 @@ footer
 .video-link img
 {
 	width: 16px;
+}
+
+.panel-about
+{
+	margin: 0 auto;
+	width: 600px;
 }
