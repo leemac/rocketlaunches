@@ -25,6 +25,11 @@ def stop_server():
     with cd(run_dir):
         run("uwsgi --stop /tmp/rocketlaunches.pid")    
 
+def build():
+    run_dir = '/srv/www/rocketlaunches.org/'
+    with cd(run_dir):
+        run("app.build/r.js -o build.js")    
+
 def update_data():
     run_dir = '/srv/www/rocketlaunches.org/rocketlaunches'
     with cd(run_dir):
