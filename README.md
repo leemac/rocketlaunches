@@ -11,3 +11,16 @@ RocketLaunches source code
 == Build ==
 
 Run: r.js -o build/build.js
+
+== Start ==
+
+fab start_server
+
+== Stop ==
+
+fab stop_server
+
+== Deploy ==
+
+fab stop_server
+
