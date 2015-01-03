@@ -14,7 +14,17 @@
 	<%=rocket_manufacturer%>
 </td>
 <td>
-	<%=orbit%>
+	<% if(orbit == "GSO") { %>
+		<a href="http://en.wikipedia.org/wiki/Geosynchronous_orbit" title="Geosynchronous orbit" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "GTO") { %>
+		<a href="http://en.wikipedia.org/wiki/Geostationary_transfer_orbit"  title="Geostationary transfer orbit" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "LEO") { %>
+		<a href="http://en.wikipedia.org/wiki/Low_Earth_orbit"  title="Low Earth orbit" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "L1") { %>
+		<a href="http://en.wikipedia.org/wiki/Lagrangian_point"  title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "L1") { %>
+		<a href="http://en.wikipedia.org/wiki/Lagrangian_point"  title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
+	<% } %>
 </td>
 <td>
 	<%=payload%>

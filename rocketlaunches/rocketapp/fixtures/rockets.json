@@ -43,5 +43,85 @@
 			"manufacturer_url" : "http://en.wikipedia.org/wiki/SpaceX"
 
 		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 3,
+		"fields" : {
+			"name" : "Angara-A5",
+			"height" : 68.4,
+			"diameter" : 3.66,
+			"mass" : 505846,
+			"stages" : 2,
+			"payload_to_leo" : 3800,
+			"payload_to_gto" : 5400,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Angara_%28rocket_family%29",
+			"country" : "ru",
+			"rocket_function" : "Orbital Launch Vehicle",
+			"first_flight_date" : "2014-12-23",
+			"manufacturer" : "Khrunichev State Research and Production Space Center",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
+
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 4,
+		"fields" : {
+			"name" : "Angara 1.2PP",
+			"height" : 40.2,
+			"diameter" : 2.9,
+			"mass" : 181700,
+			"stages" : 2,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Angara_%28rocket_family%29",
+			"country" : "ru",
+			"rocket_function" : "Orbital Launch Vehicle",
+			"first_flight_date" : "2014-12-23",
+			"manufacturer" : "Khrunichev",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
+
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 5,
+		"fields" : {
+			"name" : "Proton-K",
+			"height" : 50,
+			"diameter" : 7.4,
+			"mass" : 450510,
+			"stages" : 2,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Proton-K",
+			"country" : "ru",
+			"rocket_function" : "Heavy Lift Launch Vehicle",
+			"manufacturer" : "Khrunichev",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
+
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 6,
+		"fields" : {
+			"name" : "Proton-M",
+			"height" : 58,
+			"diameter" : 7.4,
+			"mass" : 712800,
+			"stages" : 4,
+			"payload_to_leo" : 22000,
+			"payload_to_gto" : 6700,
+			"payload_to_gso" : 3500,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Proton-M",
+			"country" : "ru",
+			"rocket_function" : "Heavy Lift Launch Vehicle",
+			"first_flight_date" : "2001-04-07",
+			"manufacturer" : "Khrunichev",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
+
+		}
 	}
 ]

@@ -7,11 +7,12 @@ class Rocket(models.Model):
 	height = models.DecimalField(max_digits=8, decimal_places=2)
 	mass = models.DecimalField(max_digits=8, decimal_places=2)
 	diameter = models.DecimalField(max_digits=8, decimal_places=2)
-	cost = models.DecimalField(max_digits=15, decimal_places=2)
-	cost_year = models.IntegerField()
+	cost = models.DecimalField(max_digits=15, decimal_places=2, null=True)
+	cost_year = models.IntegerField(null=True)
 	payload_to_leo = models.DecimalField(max_digits=8, decimal_places=2, null=True)
 	payload_to_gto = models.DecimalField(max_digits=8, decimal_places=2, null=True)
 	payload_to_sso = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+	payload_to_gso = models.DecimalField(max_digits=8, decimal_places=2, null=True)
 	status = models.CharField(max_length=200)
 	first_flight_date = models.DateTimeField(blank=True, null=True)
 	wiki_url = models.CharField(max_length=1000)
@@ -25,13 +26,6 @@ class Rocket(models.Model):
 
 	def __str__(self):
 		return self.name
-
-	def as_dict(self):
-		return dict(
-			country = self.country,
-			name = self.name,
-			manufacturer = str(self.manufacturer)
-		)
 
 class Launch(models.Model):
 	country = models.CharField(max_length=10, blank=False, null=False, default='')
