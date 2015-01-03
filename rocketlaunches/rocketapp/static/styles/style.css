@@ -35,6 +35,7 @@ td[class^="status-Partial"]
 {
 	margin-right: 50px;
 	opacity: .7;
+	max-width: 150px;
 	transition: opacity .25s ease-in-out;
 	-moz-transition: opacity .25s ease-in-out;
 	-webkit-transition: opacity .25s ease-in-out;
