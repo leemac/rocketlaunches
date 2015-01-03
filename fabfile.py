@@ -11,16 +11,13 @@ def deploy():
 # Start, Restart, stop
 
 def start_server():
-    run_dir = '/srv/www/rocketlaunches.org'
     with cd(run_dir):
-        run("uwsgi --ini rocketlaunches/rocketapp.ini")   
+        run("uwsgi --ini /srv/www/rocketlaunches.org/rocketlaunches/rocketapp.ini")   
 
 def restart_server():
-    run_dir = '/srv/www/'
     with cd(run_dir):
         run("kill -HUP `cat /tmp/rocketlaunches.pid`")      
 
 def stop_server():
-    run_dir = '/srv/www/'
     with cd(run_dir):
         run("uwsgi --stop /tmp/rocketlaunches.pid")    

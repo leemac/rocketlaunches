@@ -1,7 +1,9 @@
 rocketlaunches
 ==============
 
-RocketLaunches source code
+RocketLaunches source code.
+
+This is very alpha at the moment. The following are just my quick notes for now on how to set this up.
 
 == Import Data ==
 
@@ -23,4 +25,15 @@ fab stop_server
 == Deploy ==
 
 fab stop_server
+
+== Migrate ==
+
+python manage.py migrate --settings=rocketlaunches.settings.production
+
+== Import ==
+
+python manage.py loaddata rockets.json --settings=rocketlaunches.settings.production
+
+python manage.py import_data --settings=rocketlaunches.settings.production
+
 
