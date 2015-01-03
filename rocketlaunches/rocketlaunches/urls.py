@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'rocketlaunches.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-	url(r'^$', views.comingsoon, name='comingsoon'),
+	url(r'^$', views.index, name='index'),
     url(r'^api/', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
