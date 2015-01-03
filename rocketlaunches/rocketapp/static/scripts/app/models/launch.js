@@ -2,7 +2,7 @@ define(['backbone', 'moment'], function(Backbone){
 	Helpers = {
 		convert_to_human: function (date)
 		{
-			return moment(date, "YYYY-MM-DD h:mm:ss a").fromNow();
+			return moment(date).fromNow();
 		},
 		daysBetween: function (date1, date2)
 		{
@@ -17,6 +17,7 @@ define(['backbone', 'moment'], function(Backbone){
 
 			if(launch_date)	{
 				this.set("launch_date_human", Helpers.convert_to_human(launch_date));
+				this.set("launch_date_formatted", moment(launch_date).format('MMMM Do YYYY'));
 
 				var now = new Date();
 				var then = new Date(launch_date);

@@ -86,24 +86,6 @@
 	},
 	{
 		"model" : "rocketapp.rocket",
-		"pk" : 5,
-		"fields" : {
-			"name" : "Proton-K",
-			"height" : 50,
-			"diameter" : 7.4,
-			"mass" : 450510,
-			"stages" : 2,
-			"status" : "Active",
-			"wiki_url" : "http://en.wikipedia.org/wiki/Proton-K",
-			"country" : "ru",
-			"rocket_function" : "Heavy Lift Launch Vehicle",
-			"manufacturer" : "Khrunichev",
-			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
-
-		}
-	},
-	{
-		"model" : "rocketapp.rocket",
 		"pk" : 6,
 		"fields" : {
 			"name" : "Proton-M",
@@ -122,6 +104,26 @@
 			"manufacturer" : "Khrunichev",
 			"manufacturer_url" : "http://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center"
 
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 7,
+		"fields" : {
+			"name" : "Delta IV Heavy",
+			"height" : 72,
+			"diameter" : 5,
+			"mass" : 733000,
+			"stages" : 2,
+			"payload_to_leo" : 28790,
+			"payload_to_gto" : 14220,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Delta_IV_Heavy",
+			"country" : "us",
+			"rocket_function" : "Heavy Lift Launch Vehicle",
+			"first_flight_date" : "2004-12-21",
+			"manufacturer" : "United Launch Alliance",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/United_Launch_Alliance"
 		}
 	}
 ]

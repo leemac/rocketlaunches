@@ -1,18 +1,46 @@
-Rocket,LaunchDate,Payload,Country,Status,LaunchVideo,Orbit,Customer,CustomerUrl,Remarks
-Falcon 9 v.1.1,2015-02-01,Asian Satellite ,us,Scheduled ,,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
-Falcon 9 v.1.1,2015-01-29,USAF Satellite ,us,Scheduled ,,L1,,,Second test of booster landing legs on drone ship.
-Falcon 9 v.1.1,2015-01-06,ISS Resupply Mission ,us,Scheduled ,,LEO,,,First test of booster landing legs landing on a mobile ship platform.
-Falcon 9 v.1.1,2014-09-21,ISS Cargo Mission ,us,Success,http://www.youtube.com/watch?v=G4pgdSE2_lM,LEO,NASA Commercial Resupply Services,http://en.wikipedia.org/wiki/Commercial_Resupply_Services,
-Falcon 9 v.1.1,2014-09-07,AsiaSat Satellite,us,Success,https://www.youtube.com/watch?v=41GRc9-htcY,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
-Falcon 9 v.1.1,2014-08-05,AsiaSat Satellite ,us,Success,https://www.youtube.com/watch?v=essrkMGlw5s,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
-Falcon 9 v.1.1,2014-07-14,OrbComm Satellite ,us,Success,https://www.youtube.com/watch?v=lbHnSu-DLR4,LEO,Orbcomm,http://en.wikipedia.org/wiki/Orbcomm,SpaceX tested thier booster landing legs for the second time.
-Angara-A5,2014-12-23,Mass simulator,ru,Success,https://www.youtube.com/watch?v=BsQOpD4TIZM,GSO,,,First Launch; Contained a payload simulator.
-Angara 1.2PP,2014-07-09,Mass simulator,ru,Success,https://www.youtube.com/watch?v=glVfV4foH7I,Sub-orbital,,,
-Proton-M,2014-02-14,Türksat 4A (Turkish Satellite),ru,Success,https://www.youtube.com/watch?v=h86DZhMFxGo,GTO,Türksat,http://en.wikipedia.org/wiki/T%C3%BCrksat_(company),
-Proton-M,2014-03-15,Ekspress-AT1 and Ekspress-AT2 (Comm Satellites),ru,Success,https://www.youtube.com/watch?v=su8q1euIU1g,GSO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,
-Proton-M,2014-04-28,KazSat-3 and Luch-5V Satellites,ru,Success,https://www.youtube.com/watch?v=hlLx9AQ6qow,GTO + GSO,JSC KazSat ,http://www.iss-reshetnev.com/?cid=kazsat3,
-Proton-M,2014-05-15,Ekspress-AM4R,ru,Failure,https://www.youtube.com/watch?v=cdY1W9A2fbg,GTO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,Third stage failure at T+542 seconds. Turbo-pump pipe leak.
-Proton-M,2014-09-27,Luch (Olimp-K),ru,Success,https://www.youtube.com/watch?v=8kuDt7bwfC0,GSO,Russian Ministry of Defence/Intel (FSB),http://en.wikipedia.org/wiki/Ministry_of_Defence_%28Russia%29,
-Proton-M,2014-10-21,Ekspress-AM6 (Comm Satellite),ru,Success,https://www.youtube.com/watch?v=G61gzJOflWo,GSO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,
-Proton-M,2014-12-15,Yamal-401 (Comm Satellite),ru,Success,https://www.youtube.com/watch?v=Z-bc2OIjAHs,GSO,Gazprom Space Systems ,http://en.wikipedia.org/wiki/Gazprom_Space_Systems,
-Proton-M,2014-12-28,Astra_2G (Broadcast Satellite),ru,Success,https://www.youtube.com/watch?v=hP3eTpJfMfU,GTO,SES_S.A.,http://en.wikipedia.org/wiki/SES_S.A.,
+Rocket,LaunchDate,PayloadPurpose,Payload,Country,Status,LaunchVideo,Orbit,Customer,CustomerUrl,Remarks
+Falcon 9 v.1.1,2015-02-01,,Asian Satellite ,us,Scheduled ,,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
+Falcon 9 v.1.1,2015-01-29,,USAF Satellite ,us,Scheduled ,,L1,,,Second test of booster landing legs on drone ship.
+Falcon 9 v.1.1,2015-01-06,,ISS Resupply Mission ,us,Scheduled ,,LEO,,,First test of booster landing legs landing on a mobile ship platform.
+Falcon 9 v.1.1,2014-09-21,,ISS Cargo Mission ,us,Success,http://www.youtube.com/watch?v=G4pgdSE2_lM,LEO,NASA Commercial Resupply Services,http://en.wikipedia.org/wiki/Commercial_Resupply_Services,
+Falcon 9 v.1.1,2014-09-07,,AsiaSat Satellite,us,Success,https://www.youtube.com/watch?v=41GRc9-htcY,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
+Falcon 9 v.1.1,2014-08-05,,AsiaSat Satellite ,us,Success,https://www.youtube.com/watch?v=essrkMGlw5s,GTO,AsiaSat,http://en.wikipedia.org/wiki/AsiaSat,
+Falcon 9 v.1.1,2014-07-14,,OrbComm Satellite ,us,Success,https://www.youtube.com/watch?v=lbHnSu-DLR4,LEO,Orbcomm,http://en.wikipedia.org/wiki/Orbcomm,SpaceX tested thier booster landing legs for the second time.
+Angara-A5,2014-12-23,,Mass simulator,ru,Success,https://www.youtube.com/watch?v=BsQOpD4TIZM,GSO,,,First Launch; Contained a payload simulator.
+Angara 1.2PP,2014-07-09,,Mass simulator,ru,Success,https://www.youtube.com/watch?v=glVfV4foH7I,Sub-orbital,,,
+Proton-M,2014-02-14,,Turksat 4AU,ru,Success,https://www.youtube.com/watch?v=h86DZhMFxGo,GTO,Türksat,http://en.wikipedia.org/wiki/T%C3%BCrksat_(company),
+Proton-M,2014-03-15,,Ekspress-AT1 and Ekspress-AT2 (Comm Satellites),ru,Success,https://www.youtube.com/watch?v=su8q1euIU1g,GSO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,
+Proton-M,2014-04-28,,KazSat-3 and Luch-5V Satellites,ru,Success,https://www.youtube.com/watch?v=hlLx9AQ6qow,GTO + GSO,JSC KazSat ,http://www.iss-reshetnev.com/?cid=kazsat3,
+Proton-M,2014-05-15,,Ekspress-AM4R,ru,Failure,https://www.youtube.com/watch?v=cdY1W9A2fbg,GTO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,Third stage failure at T+542 seconds. Turbo-pump pipe leak.
+Proton-M,2014-09-27,,Luch (Olimp-K),ru,Success,https://www.youtube.com/watch?v=8kuDt7bwfC0,GSO,Russian Ministry of Defence/Intel (FSB),http://en.wikipedia.org/wiki/Ministry_of_Defence_%28Russia%29,
+Proton-M,2014-10-21,Comm Satellite,Ekspress-AM6,ru,Success,https://www.youtube.com/watch?v=G61gzJOflWo,GSO,Russian Satellite Communications Company,http://en.wikipedia.org/wiki/Russian_Satellite_Communications_Company,
+Proton-M,2014-12-15,Comm Satellite,Yamal-401,ru,Success,https://www.youtube.com/watch?v=Z-bc2OIjAHs,GSO,Gazprom Space Systems ,http://en.wikipedia.org/wiki/Gazprom_Space_Systems,
+Proton-M,2014-12-28,Broadcast Satellite,Astra_2G,ru,Success,https://www.youtube.com/watch?v=hP3eTpJfMfU,GTO,SES_S.A.,http://en.wikipedia.org/wiki/SES_S.A.,
+Delta IV Heavy,2002-11-20,Commercial communications satellite ,Eutelsat 33B,us,Success,,GTO,Eutelsat Consortium ,http://www.eutelsat.com/en/home.html,First Delta IV launch 
+Delta IV Heavy,2003-03-11,Military communications satellite ,USA-167,us,Success,,GTO,,,
+Delta IV Heavy,2003-08-29,Military communications satellite ,USA-170,us,Success,,GTO,,,
+Delta IV Heavy,2004-12-21,Demonstration payload,DemoSat/3CS-1/3CS-2,us,Partial failure ,https://www.youtube.com/watch?v=XB5_j1RYMYg,GSO,Three Corner Satellite,http://en.wikipedia.org/wiki/3_Corner_Satellite,Carried two student built satellites via the 3 Corner Satellite program. It failed to reach orbit however.
+Delta IV Heavy,2006-05-24,Weather satellite,GOES 13,us,Success,,GTO,NOAA,http://en.wikipedia.org/wiki/National_Oceanic_and_Atmospheric_Administration,
+Delta IV Heavy,2006-06-28,Reconnaissance satellite,USA-184,us,Success,,Molniya,,,
+Delta IV Heavy,2006-11-04,Military weather satellite,USA-192,us,Success,,SSO,,,First Delta IV launch into a LEO/SSO 
+Delta IV Heavy,2007-11-11,Missile warning satellite,USA-197,us,Success,,GSO,,,First Delta IV launch contracted by United Launch Alliance
+Delta IV Heavy,2009-01-18,Reconnaissance satellite,USA-202,us,Success,,GSO,National Reconnaissance Office,http://en.wikipedia.org/wiki/National_Reconnaissance_Office,Launch delayed due to damage to launch pad caused by a liquid oxygen leak 
+Delta IV Heavy,2009-06-27,Weather satellite,GOES 14,us,Success,,GTO,NOAA,http://en.wikipedia.org/wiki/National_Oceanic_and_Atmospheric_Administration,
+Delta IV Heavy,2009-12-06,Military communications satellite,USA-211,us,Success,,GTO,USDD,http://en.wikipedia.org/wiki/United_States_Department_of_Defense,
+Delta IV Heavy,2010-03-04,Weather satellite,GOES 15,us,Success,,GTO,NOAA,http://en.wikipedia.org/wiki/National_Oceanic_and_Atmospheric_Administration,
+Delta IV Heavy,2010-05-28,Navigation Satellite,USA-213,us,Success,,MEO,United States Air Force,http://en.wikipedia.org/wiki/United_States_Air_Force,
+Delta IV Heavy,2010-11-21,Reconnaissance satellite ,USA-223,us,Success,,GSO,National Reconnaissance Office,http://en.wikipedia.org/wiki/National_Reconnaissance_Office,
+Delta IV Heavy,2011-01-20,Reconnaissance satellite ,USA-224,us,Success,,LEO,,,
+Delta IV Heavy,2011-03-11,Reconnaissance satellite ,USA-227,us,Success,,GTO,National Reconnaissance Office,http://en.wikipedia.org/wiki/National_Reconnaissance_Office,
+Delta IV Heavy,2011-07-16,Navigation Satellite ,USA-231,us,Success,,MEO,Operationally Responsive Space Office,http://en.wikipedia.org/wiki/Operationally_Responsive_Space_Office,
+Delta IV Heavy,2012-01-20,Military communications satellite ,USA-233,us,Success,,GTO,,,
+Delta IV Heavy,2012-04-03,Reconnaissance satellite ,USA-234,us,Success,,LEO,National Reconnaissance Office,http://en.wikipedia.org/wiki/National_Reconnaissance_Office,
+Delta IV Heavy,2012-06-29,Reconnaissance satellite ,USA-237,us,Success,,GSO,,,
+Delta IV Heavy,2012-10-04,Navigation Satellite,USA-239,us,Success,,MEO,,,
+Delta IV Heavy,2013-05-25,Military communications satellite,USA-243,us,Success,,GTO,,,
+Delta IV Heavy,2013-08-08,Military communications satellite,USA-244,us,Success,,GTO,,,
+Delta IV Heavy,2013-08-28,Reconnaissance satellite ,USA-245,us,Success,,LEO,,,
+Delta IV Heavy,2014-02-21,Navigation Satellite,USA-248,us,Success,,MEO,,,
+Delta IV Heavy,2014-05-17,Navigation Satellite,USA-251,us,Success,,MEO,,,
+Delta IV Heavy,2014-07-28,Space Surveillance and Tech Demo,AFSPC-4 (GSSAP #1/2 & ANGELS) (USA-253/4/5) ,us,Success,,GEO,,,
+Delta IV Heavy,2014-12-05,Orion Test Flight ,EFT-1,us,Success,,MEO,,,

@@ -5,29 +5,35 @@
 	<% } %>
 </td>
 <td>
-	<%=launch_date_human%>
+	<span data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
+		<%=launch_date_human%>
+	</span>
 	<% if(is_close) { %>
-		<span class="text-warning" data-toggle="tooltip" title="" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
+		<span class="text-warning" data-toggle="tooltip" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
 	<% } %>
 </td>
 <td>
-	<%=rocket_manufacturer%>
-</td>
-<td>
 	<% if(orbit == "GSO") { %>
-		<a href="http://en.wikipedia.org/wiki/Geosynchronous_orbit" title="Geosynchronous orbit" target="_blank" class="external"><%=orbit%></a>
+		<a href="http://en.wikipedia.org/wiki/Geosynchronous_orbit" data-toggle="tooltip" data-original-title="Geosynchronous orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } else if(orbit == "GTO") { %>
-		<a href="http://en.wikipedia.org/wiki/Geostationary_transfer_orbit"  title="Geostationary transfer orbit" target="_blank" class="external"><%=orbit%></a>
+		<a href="http://en.wikipedia.org/wiki/Geostationary_transfer_orbit" data-toggle="tooltip" data-original-title="Geostationary transfer orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } else if(orbit == "LEO") { %>
-		<a href="http://en.wikipedia.org/wiki/Low_Earth_orbit"  title="Low Earth orbit" target="_blank" class="external"><%=orbit%></a>
+		<a href="http://en.wikipedia.org/wiki/Low_Earth_orbit" data-toggle="tooltip" data-original-title="Low Earth orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } else if(orbit == "L1") { %>
-		<a href="http://en.wikipedia.org/wiki/Lagrangian_point"  title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "L1") { %>
-		<a href="http://en.wikipedia.org/wiki/Lagrangian_point"  title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
+		<a href="http://en.wikipedia.org/wiki/Lagrangian_point" data-toggle="tooltip" data-original-title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "MEO") { %>
+		<a href="http://en.wikipedia.org/wiki/Medium_Earth_orbit" data-toggle="tooltip" data-original-title="Medium Earth orbit" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "Molniya") { %>
+		<a href="http://en.wikipedia.org/wiki/Molniya_orbit" data-toggle="tooltip" data-original-title="Molniya orbit" target="_blank" class="external"><%=orbit%></a>
+	<% } else if(orbit == "SSO") { %>
+		<a href="http://en.wikipedia.org/wiki/Sun-synchronous_orbit" data-toggle="tooltip" data-original-title="Sun-synchronous orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } %>
 </td>
 <td>
 	<%=payload%>
+</td>
+<td>
+	<%=payload_purpose%>
 </td>
 <td class="text-center">
 	<img src="static/images/flags/<%=country%>.png" />

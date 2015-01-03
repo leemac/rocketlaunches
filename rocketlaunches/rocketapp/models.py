@@ -34,6 +34,7 @@ class Launch(models.Model):
 	customer = models.CharField(max_length=2000, blank=True, null=True)
 	customer_url = models.CharField(max_length=2000, blank=True, null=True)
 	payload = models.CharField(max_length=2000, blank=True, null=True)
+	payload_purpose = models.CharField(max_length=2000, blank=True, null=True)
 	status = models.CharField(max_length=2000, blank=False, null=False, default='')
 	status_url = models.CharField(max_length=2000, blank=True, null=True)
 	launch_url = models.CharField(max_length=2000, blank=True, null=True)

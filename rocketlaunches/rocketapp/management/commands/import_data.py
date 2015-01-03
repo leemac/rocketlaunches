@@ -38,6 +38,7 @@ class Command(BaseCommand):
                 newLaunch.rocket = rocket
                 newLaunch.launch_date = date
                 newLaunch.payload = row['Payload']
+                newLaunch.payload_purpose = row['PayloadPurpose']
                 newLaunch.country = row['Country']
                 newLaunch.launch_url = row['LaunchVideo']
                 newLaunch.status = row['Status']
