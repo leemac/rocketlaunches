@@ -18,6 +18,6 @@
 	    }
   	},
     name: "main",
-    out: "../rocketlaunches/rocketapp/static/scripts/deploy/app.js",
+    out: "../rocketlaunches/rocketapp/static/scripts/app.deploy/app.js",
     removeCombined: true
 })
