@@ -12,7 +12,7 @@
 		<span class="text-warning" data-toggle="tooltip" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
 	<% } %>
 </td>
-<td class="visible-lg-block">
+<td class="visible-lg">
 	<% if(orbit == "GSO") { %>
 		<a href="http://en.wikipedia.org/wiki/Geosynchronous_orbit" data-toggle="tooltip" data-original-title="Geosynchronous orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } else if(orbit == "GTO") { %>
@@ -32,10 +32,10 @@
 <td>
 	<%=payload%>
 </td>
-<tdc class=" visible-lg-block">
+<td class="visible-lg">
 	<%=payload_purpose%>
 </td>
-<td class="visible-lg-block text-center">
+<td class="visible-lg text-center">
 	<img src="static/images/flags/<%=country%>.png" />
 </td>
 <td class="status-<%=status%>">
