@@ -27,6 +27,7 @@ define([
 				launchCollection.fetch({
 					data: $.param({ type: 'upcoming'}),
 					success: function () {
+						ref.$el.find(".spinner").hide();
 						var gridView = new GridView({
 							collection: launchCollection
 						});
@@ -43,6 +44,7 @@ define([
 				launchCollection.fetch({
 					data: $.param({ type: 'past'}),
 					success: function () {
+						ref.$el.find(".spinner").hide();
 						var gridView = new GridView({
 							collection: launchCollection
 						});

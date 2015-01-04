@@ -3,8 +3,14 @@
 	<% if(remarks) { %>
 		<span class="text-info" data-toggle="tooltip" title="" data-original-title="<%=remarks%>"><i class="fa fa-lightbulb-o"></i></span>
 	<% } %>
+	<div class="visible-xs" style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+		<small><%=payload%></small>
+	</div>
+	<span class="visible-xs" data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
+		<small><%=launch_date_human%></small>
+	</span>
 </td>
-<td>
+<td class="visible-lg">
 	<span data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
 		<%=launch_date_human%>
 	</span>
@@ -29,7 +35,7 @@
 		<a href="http://en.wikipedia.org/wiki/Sun-synchronous_orbit" data-toggle="tooltip" data-original-title="Sun-synchronous orbit" target="_blank" class="external"><%=orbit%></a>
 	<% } %>
 </td>
-<td>
+<td class="visible-lg">
 	<%=payload%>
 </td>
 <td class="visible-lg">
@@ -43,6 +49,7 @@
 </td>
 <td class="text-center">
 	<% if (launch_url) { %>
-		<a href="<%=launch_url%>" class="fancybox video-link"><img src="static/images/video_providers/youtube.png" /></a>
+		<a href="<%=launch_url%>" class="hidden-xs fancybox video-link"><img src="static/images/video_providers/youtube.png" /></a>
+		<a href="<%=launch_url%>" class="visible-xs video-link"><img src="static/images/video_providers/youtube.png" /></a>
 	<% } %>
 </td>
