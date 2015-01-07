@@ -1,7 +1,8 @@
 require.config({
 	paths: {
-		jquery: 'vendor/jquery',
+		jquery: 'vendor/jquery',		
 		bootstrap: 'vendor/bootstrap.min',
+		chart: 'vendor/chart.min',
 		fancyboxmedia: 'vendor/jquery.fancybox.media',
 		fancyboxpack: 'vendor/jquery.fancybox.pack',
 		underscore: 'vendor/underscore',

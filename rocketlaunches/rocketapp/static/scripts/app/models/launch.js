@@ -17,7 +17,7 @@ define(['backbone', 'moment'], function(Backbone){
 
 			if(launch_date)	{
 				this.set("launch_date_human", Helpers.convert_to_human(launch_date));
-				this.set("launch_date_formatted", moment(launch_date).format('MMMM Do YYYY'));
+				this.set("launch_date_formatted", moment(launch_date).format('MMMM Do YYYY [at] h:mm:ss a'));
 
 				var now = new Date();
 				var then = new Date(launch_date);

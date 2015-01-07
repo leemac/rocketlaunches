@@ -11,6 +11,11 @@ h1
 	margin-top: 0;
 }
 
+.title
+{
+	text-align: center;
+}
+
 .status-Success
 {
 	color: #66CD00;
@@ -19,6 +24,11 @@ h1
 .status-Failure
 {
 	color: #FF0000;
+}
+
+.alert-info
+{
+	margin: 20px auto;
 }
 
 td[class^="status-Partial"]
@@ -33,7 +43,7 @@ td[class^="status-Partial"]
 
 header
 {
-	margin: 0 auto 20px;
+	margin: 0 auto;
 	text-align: center;
 }
 

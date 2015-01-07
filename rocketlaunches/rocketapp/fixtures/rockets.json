@@ -125,5 +125,104 @@
 			"manufacturer" : "United Launch Alliance",
 			"manufacturer_url" : "http://en.wikipedia.org/wiki/United_Launch_Alliance"
 		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 8,
+		"fields" : {
+			"name" : "LVM3",
+			"height" : 43.43,
+			"diameter" : 4,
+			"mass" : 630580,
+			"stages" : 3,
+			"payload_to_leo" : 8000,
+			"payload_to_gto" : 4000,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Geosynchronous_Satellite_Launch_Vehicle_Mk_III",
+			"country" : "us",
+			"rocket_function" : "Mid-Heavy Lift Launch Vehicle",
+			"first_flight_date" : "2014-12-18",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 9,
+		"fields" : {
+			"name" : "GSLV",
+			"height" : 49.13,
+			"diameter" : 2.8,
+			"mass" : 414750,
+			"stages" : 3,
+			"payload_to_leo" : 5000,
+			"payload_to_gto" : 2500,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Geosynchronous_Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Medium Lift Launch Vehicle",
+			"first_flight_date" : "2014-12-18",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "PSLV",
+			"height" : 44,
+			"diameter" : 2.8,
+			"mass" : 320000,
+			"stages" : 4,
+			"payload_to_leo" : 3250,
+			"payload_to_gto" : 1750,			
+			"payload_to_gto" : 1425,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Medium Lift Launch Vehicle",
+			"first_flight_date" : "1993-09-20",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "ASLV",
+			"height" : 24,
+			"diameter" : 1,
+			"mass" : 41000,
+			"stages" : 4,
+			"payload_to_leo" : 150,
+			"status" : "Retired",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Augmented_Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1987-03-24",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "SLV",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
 	}
 ]

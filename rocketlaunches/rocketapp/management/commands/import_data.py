@@ -16,7 +16,11 @@ class Command(BaseCommand):
             for row in reader:
                 # Find existing launch record
                 rocketName = row['Rocket'];
-                date = datetime.strptime(row['LaunchDate'], '%Y-%m-%d');
+
+                if row['LaunchTime']:
+                    date = datetime.strptime(row['LaunchDate'] + ' ' + row['LaunchTime'], '%Y-%m-%d %H:%M');
+                else:
+                    date = datetime.strptime(row['LaunchDate'], '%Y-%m-%d');
 
                 try:
 

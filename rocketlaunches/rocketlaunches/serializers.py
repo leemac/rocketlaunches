@@ -26,4 +26,4 @@ class LaunchSerializer(serializers.ModelSerializer):
 class RocketSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Rocket
-		fields = ('name', 'stages', 'height')
+		fields = ('id', 'name', 'stages', 'height', 'country')

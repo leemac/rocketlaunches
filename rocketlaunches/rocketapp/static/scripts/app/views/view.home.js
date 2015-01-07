@@ -1,10 +1,11 @@
 define([
 	'backbone',
 	'marionette',
+	'app/models/launch',
 	'app/views/view.launch.grid',
 	'app/collections/launch',
 	'text!app/templates/home.html'
-	], function(Backbone, Marionette, GridView, LaunchCollection, viewHtml){
+	], function(Backbone, Marionette, Launch, GridView, LaunchCollection, viewHtml){
 
 		View = Backbone.Marionette.LayoutView.extend({
 			template: function() {
@@ -45,7 +46,8 @@ define([
 					data: $.param({ type: 'past'}),
 					success: function () {
 						ref.$el.find(".spinner-past").hide();
-						var gridView = new GridView({
+						var gridView = new GridView({ 
+							isPast: true,
 							collection: launchCollection
 						});
 
