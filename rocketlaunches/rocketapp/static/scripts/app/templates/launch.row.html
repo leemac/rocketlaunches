@@ -44,3 +44,8 @@
 <td class="text-center status-<%=status%>">
 	<%=status%>
 </td>
+<% if(window.isAuthenticated) { %>
+	<td class="col-md-2 text-center">
+		<a href="#" class="btn btn-default btn-edit">Edit</a>
+	</td>
+<% } %>

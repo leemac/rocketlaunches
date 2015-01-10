@@ -1,8 +1,11 @@
 define([
 	'backbone',
 	'marionette',
+	'app/common/events',
 	'app/views/view.app'
-], function(Backbone, Marionette, AppView){
+], function(Backbone, Marionette, events, AppView){
+
+
   	RocketApp = new Marionette.Application();
 
 	RocketApp.addRegions({

@@ -46,7 +46,11 @@
 </td>
 <td class="text-center">
 	<% if (launch_url) { %>
-		<a href="<%=launch_url%>" class="hidden-xs fancybox video-link"><img src="static/images/video_providers/youtube.png" /></a>
-		<a href="<%=launch_url%>" class="visible-lg visible-md visible-sm video-link"><img src="static/images/video_providers/youtube.png" /></a>
+		<a href="<%=launch_url%>" class="video-link"><img src="static/images/video_providers/youtube.png" /></a>
 	<% } %>
 </td>
+<% if(window.isAuthenticated) { %>
+	<td class="col-md-2 text-center">
+		<a href="#" class="btn btn-default">Edit</a>
+	</td>
+<% } %>

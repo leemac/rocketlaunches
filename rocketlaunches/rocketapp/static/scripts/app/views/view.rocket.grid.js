@@ -10,9 +10,7 @@ define([
 	], function($, Backbone, Marionette, ChildView, viewHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({
-			template: function() {
-				return viewHtml;
-			},
+			template: _.template(viewHtml),
 			childView: ChildView,
 			childViewContainer: "tbody"
 		});

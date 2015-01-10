@@ -22,9 +22,9 @@ define([
 			    this.options = options;
 
 			    if(this.options.isPast)
-					this.template = viewPastHtml;
+					this.template = _.template(viewPastHtml);
 				else
-					this.template = viewHtml;
+					this.template = _.template(viewHtml);
 
 			    _.bindAll(this, 'render');
 			},
