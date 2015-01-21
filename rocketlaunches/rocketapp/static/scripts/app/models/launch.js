@@ -13,6 +13,9 @@ define(['backbone', 'moment'], function(Backbone){
 
 	Launch = Backbone.Model.extend({
 		initialize: function(){
+			this.refreshCustomProperties();
+		},
+		refreshCustomProperties: function () {		
 			var launch_date = this.get("launch_date");
 
 			if(launch_date)	{
@@ -33,8 +36,6 @@ define(['backbone', 'moment'], function(Backbone){
 					this.set("is_close", false);
 
 			}
-
-
 		}
 	});
 

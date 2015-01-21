@@ -2,7 +2,7 @@ define([
 	'marionette',
 	'app/common/events',
 	'text!app/templates/launch.row.html'
-	], function(Marionette, events, ViewHtml){
+	], function(Marionette, EventBus, ViewHtml){
 
 		LaunchRowView = Backbone.Marionette.ItemView.extend({
 			template: _.template(ViewHtml),
@@ -10,9 +10,12 @@ define([
 			events: {
 				"click .btn-edit" : "editLaunchClick"
 			},
+			initialize: function () {
+				EventBus.on('launch:edited:' + this.model.id, this.render, this);
+			},
 			editLaunchClick: function()
 			{
-				events.trigger('launch:edit', this.model);
+				EventBus.trigger('launch:edit', this.model);
 			}
 		});
 

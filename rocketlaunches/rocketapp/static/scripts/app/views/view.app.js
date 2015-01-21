@@ -97,10 +97,9 @@ define([
 					ref.contentRegion.show(view);
 				});
 			},
-			renderLaunchEdit: function(args)
+			renderLaunchEdit: function(launch_model)
 			{
-				console.log('edit')
-				var view = new LaunchModal();
+				var view = new LaunchModal({ model : launch_model});
 				this.modalRegion.show(view);
 			}
 		});

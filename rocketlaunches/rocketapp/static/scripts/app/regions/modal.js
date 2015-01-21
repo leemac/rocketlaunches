@@ -7,9 +7,9 @@ define([
       el: "#modal",
 
       constructor: function(){
-        _.bindAll(this);
+        _.bindAll(this, 'show', 'showModal');
         Backbone.Marionette.Region.prototype.constructor.apply(this, arguments);
-        this.on("view:show", this.showModal, this);
+        this.on("show", this.showModal, this);
       },
 
       getEl: function(selector){
@@ -19,13 +19,12 @@ define([
       },
 
       showModal: function(view){
-        console.log('showing!')
         view.on("close", this.hideModal, this);
-        this.$el.modal('show');
+        this.$el.find(".modal").modal('show');
       },
 
       hideModal: function(){
-        this.$el.modal('hide');
+        this.$el.find(".modal").modal('hide');
       }
     });
 

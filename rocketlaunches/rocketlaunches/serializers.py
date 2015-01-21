@@ -10,14 +10,18 @@ class LaunchSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Launch
 		fields = (
+			'pk',
 			'id',
 			'remarks', 
 			'status', 
 			'orbit', 
+			'rocket',
 			'rocket_name',
 			'payload',
 			'payload_purpose',
 			'country',
+			'customer',
+			'customer_url',
 			'launch_url',
 			'launch_date',
 			'rocket_manufacturer',

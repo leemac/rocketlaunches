@@ -9,7 +9,7 @@ define([
 
 		View = Backbone.Marionette.LayoutView.extend({
 			template: function() {
-				return viewHtml;
+				return _.template(viewHtml);
 			},
 			tagName: 'div',
 			regions: {
