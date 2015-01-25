@@ -6,6 +6,9 @@
         <h4 class="modal-title">Edit Launch</h4>
       </div>
       <div class="modal-body">
+        <div class="alert alert-danger hide">
+
+        </div>
         <form class="form-horizontal">
           <div class="form-group">
             <label for="inputEmail3" class="col-sm-3 control-label">Rocket</label>
@@ -19,6 +22,7 @@
             <label for="inputPassword3" class="col-sm-3 control-label">Status</label>
             <div class="col-sm-4">
              <select class="form-control combo-status">
+              <option></option>
                <option>Scheduled</option>
                <option>Success</option>
                <option>Failure</option>
@@ -30,9 +34,15 @@
            </div>
          </div>
          <div class="form-group">
-          <label for="inputPassword3" class="col-sm-3 control-label">Date/Time</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control" id="input-launch-date" value="<%=launch_date %>" />
+          <label for="inputPassword3" class="col-sm-3 control-label">Date/Time (UTC)</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="input-launch-date-date" value="<%=launch_date_date %>" />
+          </div>  
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="input-launch-date-time" value="<%=launch_date_time %>" />
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="input-launch-date-timezone" value="EST" />
           </div>
         </div>
         <div class="form-group">
@@ -51,6 +61,7 @@
           <label for="inputPassword3" class="col-sm-3 control-label">Orbit</label>
           <div class="col-sm-4">
             <select class="form-control combo-orbit">
+              <option></option>
               <option>LEO</option>
               <option>L1</option>
               <option>MEO</option>
@@ -66,6 +77,12 @@
           <label for="inputPassword3" class="col-sm-3 control-label">Video</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" id="input-launch-url" value="<%=launch_url %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Country</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-country" value="<%=country %>"/>
           </div>
         </div>
         <div class="form-group">

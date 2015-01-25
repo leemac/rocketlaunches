@@ -47,6 +47,20 @@ def launches(request):
 
 		return HttpResponse()
 
+
+	if request.method == 'POST':
+		data = JSONParser().parse(request)
+
+		launch = Launch()
+		serializer = LaunchSerializer(launch, data=data)
+
+		if serializer.is_valid():
+			serializer.save()
+
+			return JSONResponse(serializer.data, status=201)
+
+		return JSONResponse(serializer.errors, status=400)
+
 	if request.method == 'PUT':
 		
 		data = JSONParser().parse(request)

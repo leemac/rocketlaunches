@@ -2,10 +2,11 @@ define([
 	'backbone',
 	'marionette',
 	'app/models/launch',
+	'app/common/events',
 	'app/views/view.launch.grid',
 	'app/collections/launch',
 	'text!app/templates/home.html'
-	], function(Backbone, Marionette, Launch, GridView, LaunchCollection, viewHtml){
+	], function(Backbone, Marionette, Launch, EventBus, GridView, LaunchCollection, viewHtml){
 
 		View = Backbone.Marionette.LayoutView.extend({
 			template: function() {
@@ -16,9 +17,20 @@ define([
 				upcomingRegion: "#grid-upcoming",
 				pastRegion: "#grid-past"
 			},
-			onRender: function () {
+			events: {
+				"click .btn-add" : "addLaunchClick"
+			},
+			addLaunchClick: function()
+			{
+				EventBus.trigger('launch:add');
+			},
+			onRender: function () {		
+				this.refreshGrids();
+				EventBus.on('launch:edited', this.refreshGrids, this);			
+			},
+			refreshGrids: function (){
 				this.renderUpcomingLaunches();
-				this.renderPastLaunches();				
+				this.renderPastLaunches();	
 			},
 			renderUpcomingLaunches: function () {
 				var launchCollection = new LaunchCollection();

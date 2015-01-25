@@ -1,6 +1,7 @@
 require.config({
 	paths: {
 		jquery: 'vendor/jquery',
+		datetimepicker: 'vendor/bootstrap.datetimepicker',
 		underscore: 'vendor/underscore',
 		backbone: 'vendor/backbone',
 		marionette: 'vendor/backbone.marionette',
@@ -14,7 +15,10 @@ require.config({
 	    backbone: {
 	      	deps: ["jquery", "underscore"],
 	      	exports: "Backbone"
-	    }
+	    },
+	    datetimepicker : {
+		    deps: ["jquery", "bootstrap"]
+		}
   	}
 });
 

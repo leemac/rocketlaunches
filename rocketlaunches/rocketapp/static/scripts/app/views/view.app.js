@@ -61,6 +61,7 @@ define([
 			initialize: function () {
 				this.router = new AppRouter();
 
+				events.on('launch:add', this.renderLaunchAdd, this);
 				events.on('launch:edit', this.renderLaunchEdit, this);
 
 				var ref = this;
@@ -96,6 +97,11 @@ define([
 					var view = new AboutView();
 					ref.contentRegion.show(view);
 				});
+			},
+			renderLaunchAdd: function()
+			{
+				var view = new LaunchModal();
+				this.modalRegion.show(view);
 			},
 			renderLaunchEdit: function(launch_model)
 			{

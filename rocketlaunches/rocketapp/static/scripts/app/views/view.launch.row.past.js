@@ -11,7 +11,7 @@ define([
 				"click .btn-edit" : "editLaunchClick"
 			},
 			initialize: function () {
-				EventBus.on('launch:edited:' + this.model.id, this.model);
+				EventBus.on('launch:edited:' + this.model.id, this.render, this.model);
 			},
 			editLaunchClick: function()
 			{

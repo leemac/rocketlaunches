@@ -1,6 +1,5 @@
 from fabric.api import *
 
-
 def deploy():
     run_dir = '/srv/www/rocketlaunches.org'
     with cd(run_dir):

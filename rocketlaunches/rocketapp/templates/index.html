@@ -16,15 +16,19 @@
 	<link href='{{ STATIC_URL }}styles/jquery.fancybox.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/font-awesome.min.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/style.css' rel='stylesheet' type='text/css'>
+	<link href='{{ STATIC_URL }}styles/boostrap.datetimepicker.css' rel='stylesheet' type='text/css'>	
 
 </head>
 <body>
 	<div id="app"></div>
 
+	<script>		
+	  var isAuthenticated = '{{user.is_authenticated}}' == "True" ? true : false;
+	</script>
+
 	{% if not debug %}
 	<script src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
 	<script src="{{ STATIC_URL }}scripts/app.deploy/app.js"></script>
-	{% endif %}
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,8 +39,8 @@
 		ga('create', 'UA-58166432-1', 'auto');
 		ga('send', 'pageview');
 
-	  var isAuthenticated = '{{user.is_authenticated}}' == "True" ? true : false;
 	</script>
+	{% endif %}
 
 	{% if debug %}
 	<script data-main="{{ STATIC_URL }}scripts/main" src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
