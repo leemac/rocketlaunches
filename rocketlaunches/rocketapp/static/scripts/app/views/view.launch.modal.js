@@ -18,6 +18,7 @@ define([
 						launch_url : "",
 						customer : "",
 						customer_url : "",
+						launch_date_tbd : false,
 						country : ""
 					});
 
@@ -73,11 +74,14 @@ define([
 
 				var launch_date = new Date(launch_date_date + " " + launch_date_time + " " + launch_date_timezone);
 
+				var launch_date_tbd =  this.$el.find(".checkbox-tbd").is(':checked');
+
 				this.model.save({
 					orbit: this.$el.find(".combo-orbit").val(),
 					status: this.$el.find(".combo-status").val(),
 					rocket: this.$el.find(".combo-rocket").val(),
 					launch_date: launch_date.toISOString(),
+					launch_date_tbd : launch_date_tbd,
 					payload: this.$el.find("#input-payload").val(),
 					country: this.$el.find("#input-country").val(),
 					payload_purpose: this.$el.find("#input-purpose").val(),

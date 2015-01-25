@@ -40,5 +40,6 @@ class Launch(models.Model):
 	launch_url = models.CharField(max_length=2000, blank=True, null=True)
 	orbit = models.CharField(max_length=100, blank=True, null=True)
 	launch_date = models.DateTimeField('date launched', blank=True, null=True)
+	launch_date_tbd = models.NullBooleanField(blank=True, null=True)
 	created_date = models.DateTimeField('date created', default=datetime.now())
 	updated_date = models.DateTimeField('date updated', blank=True, null=True)

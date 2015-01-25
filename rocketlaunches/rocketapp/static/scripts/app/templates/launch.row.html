@@ -13,14 +13,17 @@
 		<small><%=launch_date_human%></small>
 	</span>
 </td>
-<td class="visible-lg visible-md visible-sm">
-	<span data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
-		<%=launch_date_formatted%>
-	</span>
-	<% if(is_close) { %>
-		<span class="text-warning" data-toggle="tooltip" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
+<td class="visible-lg visible-md visible-sm">	
+	<% if(launch_date_tbd) { %>
+		<%=launch_date_tbd_text%> <span class="text-info" data-toggle="tooltip" data-original-title="Exact date is TBD"><i class="fa fa-warning"></i></span>
+	<% } else { %>
+		<span data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
+			<%=launch_date_formatted%>
+		</span>
+		<% if(is_close) { %>
+			<span class="text-warning" data-toggle="tooltip" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
+		<% } %>	
 	<% } %>
-	<br/>
 </td>
 <td class="visible-lg visible-md visible-sm">
 	<% if(orbit == "GSO") { %>

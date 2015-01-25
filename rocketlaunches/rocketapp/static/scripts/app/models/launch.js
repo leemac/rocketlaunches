@@ -48,6 +48,7 @@ define(['backbone', 'moment'], function(Backbone){
 				this.set("launch_date_formatted", moment(launch_date).format('MMMM Do YYYY [at] h:mm:ss a'));
 				this.set("launch_date_time", moment(launch_date).format('hh:mm'));
 				this.set("launch_date_date", moment(launch_date).format('MM/DD/YYYY'));
+				this.set("launch_date_tbd_text", moment(launch_date).format('MMMM YYYY'));
 
 				var now = new Date();
 				var then = new Date(launch_date);

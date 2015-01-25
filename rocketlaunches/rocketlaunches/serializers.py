@@ -24,6 +24,7 @@ class LaunchSerializer(serializers.ModelSerializer):
 			'customer_url',
 			'launch_url',
 			'launch_date',
+			'launch_date_tbd',
 			'rocket_manufacturer',
 			'rocket_manufacturer_url')
 
