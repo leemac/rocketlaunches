@@ -30,7 +30,7 @@ define([
 			},
 			childViewContainer: "tbody",
 			onRender: function () {
-				this.$el.find(".fancybox").fancybox({
+				this.$el.find(".video-link").fancybox({
 					helpers : {
 						media: true
 					},
