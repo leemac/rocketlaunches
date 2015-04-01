@@ -29,6 +29,26 @@ class LaunchSerializer(serializers.ModelSerializer):
 			'rocket_manufacturer_url')
 
 class RocketSerializer(serializers.ModelSerializer):
+
+	cost = serializers.FloatField()
+
 	class Meta:
 		model = Rocket
-		fields = ('id', 'name', 'stages', 'height', 'country')
+		fields = (
+			'id', 
+			'name', 
+			'stages', 
+			'height', 
+			'country',
+			'mass',
+			'diameter',
+			'payload_to_leo',
+			'payload_to_sso',
+			'status',
+			'wiki_url',
+			'cost',
+			'rocket_function',
+			'cost_year',
+			'first_flight_date',
+			'manufacturer',
+			'manufacturer_url')

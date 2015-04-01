@@ -10,8 +10,8 @@ ALLOWED_HOSTS = [
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'rocketlaunches', 
-        'USER': 'postgres',
+        'NAME': 'gardentracker', 
+        'USER': 'test',
         'PASSWORD': 'test',
         'HOST': 'localhost',    
         'PORT': '',  

@@ -2,7 +2,10 @@ define(['backbone', 'moment'], function(Backbone){
 
 	Rocket = Backbone.Model.extend({
 		url: function () {
-			return "api/rockets/" + this.id
+			if(this.id)
+				return "api/rockets/?id=" + this.id;
+
+			return "api/rockets/";
 		}
 	});
 

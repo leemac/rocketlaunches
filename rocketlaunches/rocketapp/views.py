@@ -80,12 +80,41 @@ def launches(request):
 
 		return JSONResponse(serializer.errors, status=400)
 
+@csrf_exempt
 def rockets(request):
 	if request.method == 'GET':
-		rockets = Rocket.objects.all().order_by('name')
-		serializer = RocketSerializer(rockets, many=True)
+
+		if('id' in request.GET):
+
+			id = request.GET['id']
+
+			try:
+				rocket = Rocket.objects.get(id=id)
+			except Rocket.DoesNotExist:
+				return HttpResponse(status=404)
+
+			serializer = RocketSerializer(rocket)
+
+			return JSONResponse(serializer.data, status=201)
+
+		else:
+			rockets = Rocket.objects.all().order_by('name')
+			serializer = RocketSerializer(rockets, many=True)
 	
-		return JSONResponse(serializer.data)
+			return JSONResponse(serializer.data)
+
+	if request.method == 'POST':
+		data = JSONParser().parse(request)
+
+		rocket = Rocket()
+		serializer = RocketSerializer(rocket, data=data)
+
+		if serializer.is_valid():
+			serializer.save()
+
+			return JSONResponse(serializer.data, status=201)
+
+		return JSONResponse(serializer.errors, status=400)
 
 	if request.method == 'PUT':	
 

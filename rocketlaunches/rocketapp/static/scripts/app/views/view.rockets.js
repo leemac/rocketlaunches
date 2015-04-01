@@ -1,19 +1,27 @@
 define([
 	'backbone',
 	'marionette',
+	'app/common/events',
 	'app/views/view.rocket.grid',
 	'app/collections/rocket',
 	'text!app/templates/rockets.html'
-	], function(Backbone, Marionette, GridView, RocketCollection, viewHtml){
+	], function(Backbone, Marionette, EventBus, GridView, RocketCollection, viewHtml){
 
 		View = Backbone.Marionette.LayoutView.extend({
-			template: function () {
-				return viewHtml;
+			template: function() {
+				return _.template(viewHtml);
 			},
 			tagName: 'div',
 			regions: {
 				gridRegion: "#grid-rockets"
-			},			
+			},		
+			events: {
+				"click .btn-add-rocket" : "addRocketClick"
+			},	
+			addRocketClick: function()
+			{
+				EventBus.trigger('rocket:add');
+			},
 			onRender: function () {
 				var collection = new RocketCollection();
 				

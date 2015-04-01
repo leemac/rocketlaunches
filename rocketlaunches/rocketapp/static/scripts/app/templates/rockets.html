@@ -1,7 +1,13 @@
-<div class="title">
-	<h3>Rockets</h3>
+<div class="clearfix">
+	<div class="pull-left">
+		<h3>Rockets</h3>
+	</div>	
+	<div class="pull-right">
+		<% if(window.isAuthenticated) { %><a class="btn btn-success" href="#/rockets/add">Add Rockets</a><% } %>
+	</div>	
 </div>
 <hr/>
+
 <div id="grid-rockets"></div>
 
 <div class="spinner">

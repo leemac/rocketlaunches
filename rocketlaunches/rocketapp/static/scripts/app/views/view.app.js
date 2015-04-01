@@ -5,11 +5,12 @@ define([
 	'app/models/rocket',
 	'app/regions/modal',
 	'app/views/view.home',
-	'app/views/view.rockets',
-	'app/views/view.rocket',
 	'app/views/view.about',
 	'app/views/view.stats',
 	'app/views/view.launch.modal',
+	'app/views/view.rockets',
+	'app/views/view.rocket.view',
+	'app/views/view.rocket.add',
 	'text!app/templates/app.html'
 	], function(
 		Backbone, 
@@ -22,11 +23,12 @@ define([
 		ModalRegion, 
 		// Views
 		HomeView, 
-		RocketsView, 
-		RocketView, 
 		AboutView, 
 		StatsView, 
 		LaunchModal,
+		RocketsView, 
+		RocketView, 
+		RocketAddView,
 		// Html
 		appHtml){
 
@@ -34,16 +36,12 @@ define([
 			routes: { 
 				'' : 'home',
 				'rockets' : 'rockets', 
+				'rockets/add' : 'rockets_add', 
 				'rockets/:id' : 'rockets_view', 
 				'stats' : 'stats', 
 				'about': 'about' 
 			} 
 		}); 
-
-		function Log(msg)
-		{
-			console.log(msg);
-		}
 
 		var contentRegion = Backbone.Marionette.Region.extend({
 			el: "#content"
@@ -64,6 +62,8 @@ define([
 				events.on('launch:add', this.renderLaunchAdd, this);
 				events.on('launch:edit', this.renderLaunchEdit, this);
 
+				events.on('rocket:add', this.renderRocketAdd, this);
+
 				var ref = this;
 
 				this.router.on('route:home', function(actions) {        
@@ -76,13 +76,18 @@ define([
 					ref.contentRegion.show(view);
 				});
 
+				this.router.on('route:rockets_add', function(actions) {      
+					var view = new RocketAddView();
+					ref.contentRegion.show(view);
+				});
+
 				this.router.on('route:rockets_view', function(id) {      
 					
-					var launch = new Rocket({id : id});
+					var rocket = new Rocket({id : id});
 					
-					launch.fetch({
+					rocket.fetch({
 						success: function () {
-							var view = new RocketView({ model : launch});
+							var view = new RocketView({ model : rocket });
 							ref.contentRegion.show(view);
 						}
 					});
@@ -107,7 +112,12 @@ define([
 			{
 				var view = new LaunchModal({ model : launch_model});
 				this.modalRegion.show(view);
-			}
+			},
+			renderRocketAdd: function()
+			{
+				var view = new RocketModal();
+				this.modalRegion.show(view);
+			},
 		});
 
 		return AppView;

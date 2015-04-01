@@ -18,7 +18,7 @@ define([
 				pastRegion: "#grid-past"
 			},
 			events: {
-				"click .btn-add" : "addLaunchClick"
+				"click .btn-add-launch" : "addLaunchClick"
 			},
 			addLaunchClick: function()
 			{

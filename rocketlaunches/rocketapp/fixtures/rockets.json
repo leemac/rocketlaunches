@@ -224,5 +224,216 @@
 			"manufacturer" : "ISRO",
 			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
 		}
-	}
+	},
+
+	HERE ONWARDS
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Ariane 5",
+			"height" : 52,
+			"diameter" : 5.4,
+			"mass" : 777000,
+			"stages" : 2,
+			"payload_to_leo" : 21000,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Ariane_5",
+			"country" : "ESA",
+			"rocket_function" : "Heavy Launch Vehicle",
+			"first_flight_date" : "1996-6-4",
+			"manufacturer" : "Airbus Defence and Space for ESA and Arianespace",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Airbus_Defence_and_Space"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Atlas 5",
+			"height" : 58.3,
+			"diameter" : 3.81,
+			"mass" : 334500,
+			"stages" : 2,
+			"payload_to_leo" : 18810,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Atlas_V",
+			"country" : "us",
+			"rocket_function" : "EELV/Medium-heavy launch vehicle",
+			"first_flight_date" : "2002-08-21",
+			"manufacturer" : "United Launch Alliance",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/United_Launch_Alliance"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Delta IV",
+			"height" : 72,
+			"diameter" : 5,
+			"mass" : 733400,
+			"stages" : 2,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Soyuz",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Super Strypi",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "GSLV Mk. 2",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Vega",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Dnepr",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "H-2B",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "H-2A",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
+	{
+		"model" : "rocketapp.rocket",
+		"pk" : 10,
+		"fields" : {
+			"name" : "Minotaur-C",
+			"height" : 22,
+			"diameter" : 1,
+			"mass" : 17000,
+			"stages" : 4,
+			"payload_to_leo" : 40,
+			"status" : "Active",
+			"wiki_url" : "http://en.wikipedia.org/wiki/Satellite_Launch_Vehicle",
+			"country" : "us",
+			"rocket_function" : "Small Launch Vehicle",
+			"first_flight_date" : "1979-10-10",
+			"manufacturer" : "ISRO",
+			"manufacturer_url" : "http://en.wikipedia.org/wiki/Indian_Space_Research_Organisation"
+		}
+	},
 ]
