@@ -28,7 +28,7 @@ define([
 
 			    _.bindAll(this, 'render');
 			},
-			childViewContainer: "tbody",
+			childViewContainer: "div",
 			onRender: function () {
 				this.$el.find(".video-link").fancybox({
 					helpers : {

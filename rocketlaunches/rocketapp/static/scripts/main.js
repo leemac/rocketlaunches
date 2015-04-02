@@ -2,6 +2,7 @@ require.config({
 	paths: {
 		jquery: 'vendor/jquery',
 		datetimepicker: 'vendor/bootstrap.datetimepicker',
+		countdown: "vendor/countdown",
 		underscore: 'vendor/underscore',
 		backbone: 'vendor/backbone',
 		marionette: 'vendor/backbone.marionette',
@@ -11,6 +12,9 @@ require.config({
 	shim: {
 	    underscore: {
 	      	exports: "_"
+	    }, 
+	    jquery: {
+	      	exports: "$"
 	    },
 	    backbone: {
 	      	deps: ["jquery", "underscore"],

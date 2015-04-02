@@ -12,7 +12,7 @@ define([
 		GridView = Backbone.Marionette.CompositeView.extend({
 			template: _.template(viewHtml),
 			childView: ChildView,
-			childViewContainer: "tbody"
+			childViewContainer: "div"
 		});
 
 	return GridView;

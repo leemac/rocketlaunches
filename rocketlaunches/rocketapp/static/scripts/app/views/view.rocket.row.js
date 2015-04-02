@@ -5,7 +5,7 @@ define([
 
 		View = Backbone.Marionette.ItemView.extend({
 			template: _.template(ViewHtml),
-			tagName: 'tr'
+			tagName: 'div'
 		});
 
 		return View;
