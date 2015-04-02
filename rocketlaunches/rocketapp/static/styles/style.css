@@ -1,5 +1,31 @@
+html { 
+  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: top;
+}
+
+.main
+{
+	background-color: rgba(0,0,0,.8);
+	color: #EEE;
+	padding: 20px;
+	border-radius: 2px;
+}
+
+hr{
+	border-color: #555;
+	background-color: #555;
+	color: #555;
+	margin-left: 25px;
+	margin-right: 25x;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-color: transparent;
 	padding-top: 20px;
 }
 
@@ -59,9 +85,19 @@ header li
 	margin-right: 30px;
 }
 
+#main-menu a
+{
+	color: #FFF;
+	padding: 10px 40px;
+}
+
+h1{
+	color: #fff;
+}
+
 .header-icon
 {
-	color: rgb(114, 147, 171);
+	color: #fff;
 	font-size: 50px;
 }
 
@@ -180,4 +216,24 @@ small
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }
+}
+
+.table-striped>tbody>tr:nth-child(odd) {
+  	background-color: #222;
+}
+
+.table-hover>tbody>tr:hover {
+  	background-color: #444;
+}
+.table>thead>tr>th, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>tbody>tr>td, 
+.table>tfoot>tr>td {
+	border-top: 1px solid #4A4A4A;
+}
+
+a{
+	color: #67B6FA;
 }
