@@ -13,10 +13,11 @@
 		<%=payload%>
 	</div>	
 	<div class="pull-right text-right">
-		<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
 		<% if(launch_date_tbd) { %>
-			<%=launch_date_date%>
+			<%=launch_date_date%> <br/>
+			<small>(Expected)</small>
 		<% } else if(launch_date_formatted) { %>
+			<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
 			<%=launch_date_formatted%> <br/>
 			<small>(Local Time)</small>
 		<% } %>

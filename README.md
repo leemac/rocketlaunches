@@ -36,4 +36,7 @@ python manage.py loaddata rockets.json --settings=rocketlaunches.settings.produc
 
 python manage.py import_data --settings=rocketlaunches.settings.production
 
+== Symbolic Link for Admin assets == 
+
+sudo ln -s /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin admin
 

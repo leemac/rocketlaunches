@@ -8,11 +8,11 @@ html {
 }
 
 hr {
-	border-color: #555;
-	background-color: #555;
-	color: #555;
+	border-color: #EEE;
+	background-color: #EEE;
+	color: #EEE;
 	margin-left: 25px;
-	margin-right: 25x;
+	margin-right: 25px;
 }
 
 body {
@@ -60,10 +60,17 @@ header li
 
 footer
 {
-  color: #AAA;
+  color: #EEE;
   font-size: 11px;
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: center;
+}
+
+footer a
+{
+	color: #FFF;
+	font-weight: 600;
 }
 
 small
@@ -85,6 +92,12 @@ a {
 
 a:hover {
 	color: #D5FF58;
+}
+
+.loader
+{
+	padding: 20px;
+	text-align: center;
 }
 
 .main
@@ -203,7 +216,7 @@ a:hover {
 }
 
 .spinner > div {
-  background-color: #AAA;
+  background-color: #FFF;
   height: 100%;
   width: 6px;
   display: inline-block;

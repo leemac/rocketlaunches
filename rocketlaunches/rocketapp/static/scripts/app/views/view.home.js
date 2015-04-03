@@ -38,30 +38,12 @@ define([
 				launchCollection.fetch({
 					data: $.param({ type: 'upcoming'}),
 					success: function () {
-						ref.$el.find(".spinner-upcoming").hide();
+						ref.$el.find(".loader").hide();
 						var gridView = new GridView({
 							collection: launchCollection
 						});
 
 						ref.upcomingRegion.show(gridView);
-					}
-				});
-			},
-			renderPastLaunches: function () {
-				var launchCollection = new LaunchCollection();
-				
-				var ref = this;
-
-				launchCollection.fetch({
-					data: $.param({ type: 'past'}),
-					success: function () {
-						ref.$el.find(".spinner-past").hide();
-						var gridView = new GridView({ 
-							isPast: true,
-							collection: launchCollection
-						});
-
-						ref.pastRegion.show(gridView);
 					}
 				});
 			}
