@@ -16,6 +16,9 @@ require.config({
 	    jquery: {
 	      	exports: "$"
 	    },
+	    countdown: {
+	      	exports: "countdown"
+	    },
 	    backbone: {
 	      	deps: ["jquery", "underscore"],
 	      	exports: "Backbone"
@@ -26,6 +29,6 @@ require.config({
   	}
 });
 
-require(['app',], function(App){
+require(['app'], function(App){
   App.start();
 });

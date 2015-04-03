@@ -42,13 +42,16 @@ define(['backbone', 'moment'], function(Backbone){
 	    },
 		refreshCustomProperties: function () {		
 			var launch_date = this.get("launch_date");
+			
+			// For Local Time
+			var date = new Date(launch_date);
 
 			if(launch_date)	{
-				this.set("launch_date_human", Helpers.convert_to_human(launch_date));
-				this.set("launch_date_formatted", moment(launch_date).format('MMMM Do YYYY [at] h:mm:ss a'));
-				this.set("launch_date_time", moment(launch_date).format('hh:mm'));
-				this.set("launch_date_date", moment(launch_date).format('MM/DD/YYYY'));
-				this.set("launch_date_tbd_text", moment(launch_date).format('MMMM YYYY'));
+				this.set("launch_date_human", Helpers.convert_to_human(date));
+				this.set("launch_date_formatted", moment(date).format('MMMM Do YYYY [at] h:mm:ss a'));
+				this.set("launch_date_time", moment(date).format('hh:mm'));
+				this.set("launch_date_date", moment(date).format('MM/DD/YYYY'));
+				this.set("launch_date_tbd_text", moment(date).format('MMMM YYYY'));
 
 				var now = new Date();
 				var then = new Date(launch_date);

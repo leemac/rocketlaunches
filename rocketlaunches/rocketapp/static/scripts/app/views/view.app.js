@@ -8,6 +8,7 @@ define([
 	'app/views/view.about',
 	'app/views/view.stats',
 	'app/views/view.launch.modal',
+	'app/views/view.launches',
 	'app/views/view.rockets',
 	'app/views/view.rocket.view',
 	'app/views/view.rocket.add',
@@ -26,6 +27,7 @@ define([
 		AboutView, 
 		StatsView, 
 		LaunchModal,
+		LaunchesView, 
 		RocketsView, 
 		RocketView, 
 		RocketAddView,
@@ -37,7 +39,8 @@ define([
 				'' : 'home',
 				'rockets' : 'rockets', 
 				'rockets/add' : 'rockets_add', 
-				'rockets/:id' : 'rockets_view', 
+				'rockets/:id' : 'rockets_view', 				
+				'launches' : 'launches', 
 				'stats' : 'stats', 
 				'about': 'about' 
 			} 
@@ -61,7 +64,6 @@ define([
 
 				events.on('launch:add', this.renderLaunchAdd, this);
 				events.on('launch:edit', this.renderLaunchEdit, this);
-
 				events.on('rocket:add', this.renderRocketAdd, this);
 
 				var ref = this;
@@ -73,6 +75,11 @@ define([
 
 				this.router.on('route:rockets', function(actions) {      
 					var view = new RocketsView();
+					ref.contentRegion.show(view);
+				});
+
+				this.router.on('route:launches', function(actions) {      
+					var view = new LaunchesView();
 					ref.contentRegion.show(view);
 				});
 

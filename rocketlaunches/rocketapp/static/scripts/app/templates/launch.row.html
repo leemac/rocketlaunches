@@ -1,11 +1,24 @@
 <div class="listing launch-row clearfix">
-	<div class="pull-left strong" style="width: 200px;">
-		<%=rocket_name%>
+	<div class="pull-left">
+		<img src="static/images/flags/<%=country%>.png" />
+	</div>	
+	<div class="pull-left" style="margin-left: 30px; width: 300px;">
+		<span class="title"><%=rocket_name%></span><br/>
+		<% if(customer) { %>
+			<span class="meta">Customer: <%=customer%></span><br/>
+		<% } %>
+		<span class="meta">Orbit: <%=orbit%></span><br/>
 	</div>	
 	<div class="pull-left">
 		<%=payload%>
 	</div>	
-	<div class="pull-right text-right" style="width: 700px;">
-		<span class="countdown" js-launch-date="<%=launch_date%>"></span>
+	<div class="pull-right text-right">
+		<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
+		<% if(launch_date_tbd) { %>
+			<%=launch_date_date%>
+		<% } else if(launch_date_formatted) { %>
+			<%=launch_date_formatted%> <br/>
+			<small>(Local Time)</small>
+		<% } %>
 	</div>	
 </div>

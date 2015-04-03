@@ -6,7 +6,7 @@ define([
 
 		LaunchRowView = Backbone.Marionette.ItemView.extend({
 			template: _.template(ViewHtml),
-			tagName: 'tr',
+			tagName: 'div',
 			events: {
 				"click .btn-edit" : "editLaunchClick"
 			},

@@ -43,3 +43,6 @@ class Launch(models.Model):
 	launch_date_tbd = models.NullBooleanField(blank=True, null=True)
 	created_date = models.DateTimeField('date created', default=datetime.now())
 	updated_date = models.DateTimeField('date updated', blank=True, null=True)
+
+	def __str__(self):
+		return self.rocket.name + ' ' + str(self.launch_date)

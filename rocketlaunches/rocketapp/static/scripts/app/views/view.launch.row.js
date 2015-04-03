@@ -7,7 +7,9 @@ define([
 
 		LaunchRowView = Backbone.Marionette.ItemView.extend({
 			template: _.template(ViewHtml),
-			tagName: 'div',
+			tagName: function () {
+				return "div";
+			},
 			events: {
 				"click .btn-edit" : "editLaunchClick"
 			},
@@ -19,7 +21,6 @@ define([
 				EventBus.trigger('launch:edit', this.model);
 			},
 			render: function () {
-
 				this.$el.html(this.template(this.model.toJSON()));
 
 				var countdownElement = this.$el.find(".countdown");

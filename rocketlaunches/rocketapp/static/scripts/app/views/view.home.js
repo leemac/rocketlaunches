@@ -14,8 +14,7 @@ define([
 			},
 			tagName: 'div',
 			regions: {
-				upcomingRegion: "#grid-upcoming",
-				pastRegion: "#grid-past"
+				upcomingRegion: "#grid-upcoming"
 			},
 			events: {
 				"click .btn-add-launch" : "addLaunchClick"
@@ -30,7 +29,6 @@ define([
 			},
 			refreshGrids: function (){
 				this.renderUpcomingLaunches();
-				this.renderPastLaunches();	
 			},
 			renderUpcomingLaunches: function () {
 				var launchCollection = new LaunchCollection();
