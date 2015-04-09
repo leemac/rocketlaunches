@@ -1,25 +1,28 @@
-<div class="listing launch-row clearfix">
-	<div class="pull-left">
-		<img src="static/images/flags/<%=country%>.png" />
-	</div>	
-	<div class="pull-left" style="margin-left: 30px; width: 300px;">
-		<span class="title"><%=rocket_name%></span><br/>
-		<% if(customer) { %>
-			<span class="meta">Customer: <%=customer%></span><br/>
-		<% } %>
-		<span class="meta">Orbit: <%=orbit%></span><br/>
-	</div>	
-	<div class="pull-left">
-		<%=payload%>
-	</div>	
-	<div class="pull-right text-right">
-		<% if(launch_date_tbd) { %>
-			<%=launch_date_date%> <br/>
-			<small>(Expected)</small>
-		<% } else if(launch_date_formatted) { %>
-			<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
-			<%=launch_date_formatted%> <br/>
-			<small>(Local Time)</small>
-		<% } %>
-	</div>	
+<div class="listing launch-row">
+	<div class="clearfix">
+		<div class="pull-left">
+			<img src="static/images/flags/<%=country%>.png" />
+		</div>	
+		<div class="pull-left" style="margin-left: 30px; width: 300px;">
+			<span class="title"><%=rocket_name%></span><br/>
+			<% if(customer) { %>
+				<span class="meta">Customer: <%=customer%></span><br/>
+			<% } %>
+			<span class="meta">Orbit: <%=orbit%></span><br/>
+		</div>	
+		<div class="pull-left">
+			<%=payload%>
+		</div>	
+		<div class="pull-right text-right">
+			<% if(launch_date_tbd) { %>
+				<%=launch_date_date%> <br/>
+				<small>(Expected)</small>
+			<% } else if(launch_date_formatted) { %>
+				<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
+				<%=launch_date_formatted%> <br/>
+				<small>(Local Time)</small>
+			<% } %>
+		</div>	
+	</div>
+	<div class="details"></div>
 </div>

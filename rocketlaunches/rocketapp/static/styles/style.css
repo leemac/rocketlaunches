@@ -47,8 +47,8 @@ header
 
 header ul
 {
-	margin: 0;
 	list-style: none;
+	margin: 0;
 }
 
 header li
@@ -102,9 +102,9 @@ a:hover {
 
 .main
 {
+	border-radius: 2px;
 	color: #EEE;
   	padding: 0 20px;
-	border-radius: 2px;
 }
 
 .status-Success
@@ -162,8 +162,8 @@ a:hover {
 
 .page-title
 {
-	text-align: center;
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .panel-powered-by
@@ -174,8 +174,8 @@ a:hover {
 .panel-powered-by img
 {
 	margin-right: 50px;
-	opacity: .7;
 	max-width: 150px;
+	opacity: .7;
 	transition: opacity .25s ease-in-out;
 	-moz-transition: opacity .25s ease-in-out;
 	-webkit-transition: opacity .25s ease-in-out;
@@ -208,21 +208,20 @@ a:hover {
 /* Spinner */
 
 .spinner {
-  margin: 25px auto;
-  width: 50px;
-  height: 30px;
-  text-align: center;
   font-size: 10px;
+  height: 30px;
+  margin: 25px auto;
+  text-align: center;
+  width: 50px;
 }
 
 .spinner > div {
-  background-color: #FFF;
-  height: 100%;
-  width: 6px;
-  display: inline-block;
-  
   -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
   animation: stretchdelay 1.2s infinite ease-in-out;
+  background-color: #FFF;
+  display: inline-block;
+  height: 100%;
+  width: 6px;
 }
 
 .spinner .rect2 {
@@ -281,11 +280,17 @@ a:hover {
 }
 
 .listing {
-	padding: 19px;
 	background-color: rgba(46, 52, 68, 0.6);
-	margin-bottom: 15px;
+	border: 2px solid rgba(33, 37, 48, 0.2);
 	font-weight: 300;
 	font-size: 16px;
+	margin-bottom: 15px;
+	padding: 19px;
+}
+
+.listing:hover
+{
+	cursor: pointer;
 }
 
 .listing .meta
@@ -321,9 +326,9 @@ a:hover {
 
 .page
 {
-	padding: 60px;
 	background-color: rgba(46, 52, 68, 0.6);
 	font-size: 14px
+	padding: 60px;
 }
 
 .grid-launches-past tr

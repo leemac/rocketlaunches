@@ -15,7 +15,9 @@ from django.utils import timezone
 from rocketapp.models import Launch
 
 def index(request):
-   return render(request, 'index.html')
+	launches = Launch.objects.all().order_by('-launch_date')
+
+	return render(request, 'index.html')
 
 @csrf_exempt
 def launches(request):

@@ -11,7 +11,7 @@
 
 	<link type="text/plain" rel="author" href="http://rocketlaunches.net/humans.txt" />
 	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,300,400,700,600' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,300,400,700,600' rel='stylesheet' type='text/css'> -->
 	<link href='{{ STATIC_URL }}styles/bootstrap.min.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/jquery.fancybox.css' rel='stylesheet' type='text/css'>
 	<link href='{{ STATIC_URL }}styles/font-awesome.min.css' rel='stylesheet' type='text/css'>
@@ -26,6 +26,33 @@
 	<script>		
 	  var isAuthenticated = '{{user.is_authenticated}}' == "True" ? true : false;
 	</script>
+
+		{% for launch in launches %}
+			foo
+		{% endfor %}
+
+	<noscript>
+
+		<header>	    	
+			<span class="header-icon">
+				<i class="fa fa-rocket"></i>
+			</span>
+			<h1>
+				Rocket Launches (alpha)
+			</h1>
+
+			<ul id="main-menu">
+				<li><a class="nav-home" href="#">Home</a></li>
+				<li><a class="nav-launches" href="#/launches">Launches</a></li>
+				<li><a class="nav-rockets" href="#/rockets">Rockets</a></li>
+				<li><a class="nav-about" href="#/about">About</a></li>
+			</ul>
+
+			<hr style="width: 60%; margin: 10px auto;">
+		</header>
+
+
+	</noscript>
 
 	{% if not debug %}
 	<script src="{{ STATIC_URL }}scripts/vendor/require.js"></script>
