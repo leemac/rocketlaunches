@@ -8,8 +8,12 @@
 		<% if(customer) { %>
 			<span class="meta">Customer: <%=customer%></span><br/>
 		<% } %>
+		<% if(payload) { %>
 		<span class="meta">Payload: <%=payload%></span><br/>
+		<% } %>
+		<% if(orbit) { %>
 		<span class="meta">Orbit: <%=orbit%></span><br/>
+		<% } %>
 	</div>	
 	<div class="pull-right text-right">
 		<% if(launch_date_tbd) { %>
