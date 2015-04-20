@@ -26,7 +26,8 @@ require.config({
 	      	exports: "moment"
 	    },
      	fancybox: {
-		    deps: ["jquery"]
+		    deps: ["jquery"],
+	      	exports: "fancybox"
 	    },
 	    fancyboxmedia: {
 		    deps: ["jquery"]

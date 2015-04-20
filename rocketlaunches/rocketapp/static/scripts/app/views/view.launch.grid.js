@@ -6,9 +6,7 @@ define([
 	'app/views/view.launch.row.past',
 	'text!app/templates/launch.grid.html',
 	'text!app/templates/launch.grid.past.html',
-	'bootstrap',
-	'fancybox',
-	'fancyboxmedia'
+	'bootstrap'
 	], function($, Backbone, Marionette, LaunchRowView, LaunchRowViewPast, viewHtml, viewPastHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({
@@ -30,14 +28,14 @@ define([
 			},
 			childViewContainer: "div",
 			onRender: function () {
-				this.$el.find(".video-link").fancybox({
+				/* this.$el.find(".video-link").fancybox({
 					helpers : {
 						media: true
 					},
 					youtube : {
 						autoplay: 1
 					}
-				});
+				}); */
 
 				this.$el.find('[data-toggle="tooltip"]').tooltip();
 			}
