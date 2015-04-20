@@ -1,42 +1,20 @@
 rocketlaunches
 ==============
 
-RocketLaunches source code.
+RocketLaunches.org aims to be an informational site in regards to rocket launches around the world. It will contain statistics on launches, details of the rockets and a way to be alerted when launches are about to occur.
 
-This is very alpha at the moment. The following are just my quick notes for now on how to set this up.
+This is very alpha at the moment. The frontend is Backbone/Marionette with a DJango/Postgresql backend.
 
-== Import Data ==
+== Features ==
 
-1. Edit data/launches.csv
-2. Run: manage.py import_data
+- View past and future launches quickly and easily
+- Launch Pages
+-- Show details of the launch such as news, video, comments, livestreams etc.
+-- Show details of the rocket
+- Rocket Pages
+-- View next launch date/countdown
+-- Show list of launches for the rocket
+-- Show statistcs and stats for the rocket (% of successes, % of failures)
+- Powerful alerts to warn you of a launch or cancelled launches.
 
-== Build ==
-
-Run: r.js -o build/build.js
-
-== Start ==
-
-fab start_server
-
-== Stop ==
-
-fab stop_server
-
-== Deploy ==
-
-fab stop_server
-
-== Migrate ==
-
-python manage.py migrate --settings=rocketlaunches.settings.production
-
-== Import ==
-
-python manage.py loaddata rockets.json --settings=rocketlaunches.settings.production
-
-python manage.py import_data --settings=rocketlaunches.settings.production
-
-== Symbolic Link for Admin assets == 
-
-sudo ln -s /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin admin
-
+More features tbd

@@ -8,16 +8,14 @@
 		<% if(customer) { %>
 			<span class="meta">Customer: <%=customer%></span><br/>
 		<% } %>
+		<span class="meta">Payload: <%=payload%></span><br/>
 		<span class="meta">Orbit: <%=orbit%></span><br/>
-	</div>	
-	<div class="pull-left">
-		<%=payload%>
 	</div>	
 	<div class="pull-right text-right">
 		<% if(launch_date_tbd) { %>
-			<%=launch_date_date%>
+			<span class="time"><%=launch_date_date%></span>
 		<% } else if(launch_date_formatted) { %>
-			<%=launch_date_formatted%> <br/>
+			<span class="time"><%=launch_date_formatted%></span> <br/>
 			<small>(Local Time)</small>
 		<% } %>
 	</div>	

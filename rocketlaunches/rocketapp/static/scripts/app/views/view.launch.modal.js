@@ -4,7 +4,8 @@ define([
 	'app/common/events',
 	'app/collections/rocket',
 	'app/models/launch',
-	'text!app/templates/modals/launch_edit.html'
+	'text!app/templates/modals/launch_edit.html',
+	'moment'
 	], function(Backbone, Marionette, EventBus, RocketCollection, Launch, viewHtml){
 
 		View = Backbone.Marionette.LayoutView.extend({

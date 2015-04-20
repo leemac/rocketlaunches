@@ -11,9 +11,12 @@ DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'rocketlaunches', 
-        'USER': 'jelly',
-        'PASSWORD': 'agc2400!!!!',
+        'USER': 'test',
+        'PASSWORD': 'test',
         'HOST': '127.0.0.1',    
-        'PORT': '5433',  
+        'PORT': '5432',  
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp/rocket-messages' # change this to a proper location

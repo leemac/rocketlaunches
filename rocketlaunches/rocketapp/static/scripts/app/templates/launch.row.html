@@ -3,7 +3,7 @@
 		<div class="pull-left">
 			<img src="static/images/flags/<%=country%>.png" />
 		</div>	
-		<div class="pull-left" style="margin-left: 30px; width: 300px;">
+		<div class="pull-left" style="margin-left: 30px;">
 			<span class="title"><%=rocket_name%></span><br/>
 			<% if(customer) { %>
 				<span class="meta">Customer: <%=customer%></span><br/>
@@ -15,12 +15,11 @@
 		</div>	
 		<div class="pull-right text-right">
 			<% if(launch_date_tbd) { %>
-				<%=launch_date_date%> <br/>
+				<span class="time"><%=launch_date_date%></span><br/>
 				<small>(Expected)</small>
 			<% } else if(launch_date_formatted) { %>
-				<span class="countdown" js-launch-date="<%=launch_date%>"></span><br/>
-				<%=launch_date_formatted%> <br/>
-				<small>(Local Time)</small>
+				<span class="countdown time" js-launch-date="<%=launch_date%>"></span><br/>
+				<small><%=launch_date_formatted%> Local Time</small>
 			<% } %>
 		</div>	
 	</div>

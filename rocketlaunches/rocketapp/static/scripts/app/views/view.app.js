@@ -100,6 +100,25 @@ define([
 					});
 				});
 
+				this.router.bind('all ', function(route, section) {
+				   
+				    route = route.replace('route:', '');
+
+				    if(route === "route")
+				    	return;
+				    
+				    var $el = ref.$el.find(".nav-" + route);
+
+				    // If current route is highlighted, we're done.
+				    if ($el.hasClass('selected')) {
+				        return;
+				    } else {
+				        // Unhighlight active tab.
+				        $('a[class^="nav-"]').removeClass('selected');
+				        $el.addClass('selected');
+				    }
+				});
+
 				this.router.on('route:stats', function(actions) {        
 					var view = new StatsView();
 					ref.contentRegion.show(view);

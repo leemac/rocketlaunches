@@ -46,3 +46,12 @@ class Launch(models.Model):
 
 	def __str__(self):
 		return self.rocket.name + ' ' + str(self.launch_date)
+
+class Subscriber(models.Model):
+	email = models.CharField(max_length=200, blank=False, null=False, default='')
+	active = models.BooleanField(blank=False, null=False, default=True)
+	created_date = models.DateTimeField('date created', default=datetime.now())
+	updated_date = models.DateTimeField('date updated', blank=True, null=True)
+
+	def __str__(self):
+		return self.email

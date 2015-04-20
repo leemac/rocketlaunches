@@ -13,8 +13,12 @@ define([
 			events: {
 
 			},
-			initialize: function () {
+			initialize: function (options) {
+ 				this.options = options || {};
 
+ 				this.model = this.options.model;
+
+ 				this.render();
 			},			
 			render: function () {
 				this.$el.html(this.template(this.model.toJSON()));

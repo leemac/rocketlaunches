@@ -13,7 +13,7 @@ define([
 			},
 			events: {
 				"click .btn-edit" : "editLaunchClick",
-				"click .listing" : "expandClick"
+				//"click .listing" : "expandClick"
 			},
 			initialize: function () {
 				EventBus.on('launch:edited:' + this.model.id, this.render, this);
@@ -37,13 +37,17 @@ define([
 					listing.animate({
 		                height : '400px'	
 	            	}, speed, 'swing', function () {
-	            		ref.$el.find(".details").html(new RowDetailsView().$el.html());
+						// TODO: Make this more marionette-like
+	            		ref.$el.find(".details").html(new RowDetailsView({ model : ref.model }).$el.html());
 	            	});
 				}
 				else
 				{
 					this.isExpanded = false;
 					
+					// TODO: Make this more marionette-like
+					ref.$el.find(".details").html("");
+
 					listing.animate({
 		                height : this.originalHeight + 'px'
 	            	}, speed, 'swing');

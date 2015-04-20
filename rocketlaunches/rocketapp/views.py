@@ -3,16 +3,14 @@ from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
+from datetime import datetime, timedelta, time
+
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 
-from rocketlaunches.serializers import LaunchSerializer, RocketSerializer
-from rocketapp.models import Rocket, Launch
-from datetime import datetime, timedelta, time
-from django.utils import timezone
-
-
-from rocketapp.models import Launch
+from rocketlaunches.serializers import LaunchSerializer, RocketSerializer, SubscriberSerializer
+from rocketapp.models import Rocket, Launch, Subscriber
 
 def index(request):
 	launches = Launch.objects.all().order_by('-launch_date')
@@ -125,6 +123,21 @@ def rockets(request):
 
 		if serializer.is_valid():
 			serializer.save()
+			return JSONResponse(serializer.data, status=201)
+
+		return JSONResponse(serializer.errors, status=400)
+
+@csrf_exempt
+def subscribers(request):
+	if request.method == 'POST':
+		data = JSONParser().parse(request)
+
+		subscriber = Subscriber()
+		serializer = SubscriberSerializer(subscriber, data=data)
+
+		if serializer.is_valid():
+			serializer.save()
+
 			return JSONResponse(serializer.data, status=201)
 
 		return JSONResponse(serializer.errors, status=400)

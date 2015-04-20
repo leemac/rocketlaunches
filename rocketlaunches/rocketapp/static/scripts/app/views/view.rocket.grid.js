@@ -4,9 +4,7 @@ define([
 	'marionette',
 	'app/views/view.rocket.row',
 	'text!app/templates/rocket.grid.html',
-	'bootstrap',
-	'vendor/jquery.fancybox.pack',
-	'vendor/jquery.fancybox.media'
+	'bootstrap'
 	], function($, Backbone, Marionette, ChildView, viewHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({

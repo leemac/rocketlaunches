@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from rocketapp.models import Rocket, Launch
+from rocketapp.models import Rocket, Launch, Subscriber
 
 class LaunchSerializer(serializers.ModelSerializer):
 	rocket_name = serializers.ReadOnlyField(source='rocket.name')
@@ -52,3 +52,11 @@ class RocketSerializer(serializers.ModelSerializer):
 			'first_flight_date',
 			'manufacturer',
 			'manufacturer_url')
+
+class SubscriberSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Subscriber
+		fields = (
+			'id', 
+			'email')

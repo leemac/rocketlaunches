@@ -1,16 +1,20 @@
-<div class="page-title">
-	<h3>Rockets</h3>
-	<% if(window.isAuthenticated) { %><a class="btn btn-success" href="#/rockets/add">Add Rocket</a><% } %>
-</div>
+<div class="listing-container">
+	<div class="page-title">
+		<h3 class="pull-left">Rockets</h3>
+		<div class="pull-right">
+			<% if(window.isAuthenticated) { %><a class="btn btn-success" href="#/rockets/add">Add Rocket</a><% } %>
+		</div>
+	</div>
 
-<div id="grid-rockets"></div>
+	<div id="grid-rockets"></div>
 
-<div class="loader">
-	<div class="spinner spinner-past">
-		<div class="rect1"></div>
-		<div class="rect2"></div>
-		<div class="rect3"></div>
-		<div class="rect4"></div>
-		<div class="rect5"></div>
+	<div class="loader">
+		<div class="spinner spinner-past">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
 	</div>
 </div>

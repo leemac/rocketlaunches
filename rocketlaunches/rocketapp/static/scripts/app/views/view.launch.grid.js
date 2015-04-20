@@ -7,8 +7,8 @@ define([
 	'text!app/templates/launch.grid.html',
 	'text!app/templates/launch.grid.past.html',
 	'bootstrap',
-	'vendor/jquery.fancybox.pack',
-	'vendor/jquery.fancybox.media'
+	'fancybox',
+	'fancyboxmedia'
 	], function($, Backbone, Marionette, LaunchRowView, LaunchRowViewPast, viewHtml, viewPastHtml){
 
 		GridView = Backbone.Marionette.CompositeView.extend({

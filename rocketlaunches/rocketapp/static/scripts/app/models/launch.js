@@ -1,4 +1,4 @@
-define(['backbone', 'moment'], function(Backbone){
+define(['backbone', 'moment'], function(Backbone, moment){
 
 	Helpers = {
 		convert_to_human: function (date)
