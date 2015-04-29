@@ -12,7 +12,6 @@ from rest_framework.parsers import JSONParser
 
 from rocketlaunches.serializers import LaunchSerializer, RocketSerializer, SubscriberSerializer
 from rocketapp.models import Rocket, Launch, Subscriber
-from django.conf import settings
 
 def index(request):
 	launches = Launch.objects.all().filter(launch_date__gte=timezone.localtime(timezone.now())).order_by('launch_date')
@@ -21,11 +20,6 @@ def index(request):
 	context = RequestContext(request, {
 		'launches': launches,
 	})
-
-	if(settings.SITEOFFLINE):
-		if not request.user.is_authenticated():
-			template = loader.get_template('offline.html')
-			return HttpResponse(template.render(context))
 	
 	return HttpResponse(template.render(context))
 
