@@ -25,14 +25,7 @@
 		</div>	
 		<div class="col-countdown"> 
 			{{ launch.launch_date|get_launch_displaytext }}
-
-			{% if launch.launch_date_tbd %}
-				<span class="time">{{ launch.launch_date }}</span><br/>
-				<small>(Expected)</small>			
-			{% else %}
-				<span class="countdown time" js-launch-date="{{ launch.launch_date|date:"c" }}"></span><br/>
-				<small title='{{ launch.launch_date|date:"D F d \a\t h:i:s A" }}'>{{ launch.launch_date|naturaltime }} Local Time</small>
-			{% endif %}
+			{{ launch|get_launch_displaytext_extra|safe }}
 		</div>	
 	</div>
 
