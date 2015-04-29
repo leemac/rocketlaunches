@@ -22,6 +22,9 @@
 			{% if launch.orbit %}
 				<div class="meta">Orbit: {{launch.orbit}}</div>
 			{% endif %}
+			{% if launch.country %}
+				<div class="meta">Country: <img src="{{ STATIC_URL }}images/flags/{{ launch.country }}.png" style="width: 16px;" /></div>
+			{% endif %}
 		</div>	
 		<div class="col-countdown"> 
 			{{ launch.launch_date|get_launch_displaytext }}
