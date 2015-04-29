@@ -9,8 +9,8 @@
     {% for rocket in rockets %}
     
     <div class="listing clearfix">
-		<div class="pull-left">
-			{{ rocket.name }}
+		<div class="title">
+			<a href="{% url 'rockets_view' rocket.id %}">{{ rocket.name }}</a>
 		</div>	
 	</div>
 

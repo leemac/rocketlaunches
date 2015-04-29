@@ -1,0 +1,57 @@
+{% extends "shared/__base.html" %}
+{% load humanize %}
+
+{% block content %}	
+	<div class="page-title">
+		<h3>{{rocket.name}}</h3>
+	</div>
+	<hr/>
+
+	<div class="title" style="text-align:left" >
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Rocket Details</div>
+		  <ul class="list-group">
+		  	<li class="list-group-item"><strong>Manufacturer</strong> : <a href="{{ rocket.manufacturer_url }}">{{ manufacturer }}</a></li>
+		  	<li class="list-group-item"><strong>Status</strong> : {{ rocket.status }}</li>
+		  	<li class="list-group-item"><strong>Function</strong> : {{ rocket.rocket_function }}</li>
+		  </ul>
+		</div>
+	</div>
+
+	<div class="title" style="text-align:left" >
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Physical Characteristics</div>
+		  <ul class="list-group">
+		  	<li class="list-group-item"><strong>Mass</strong> : {{ rocket.mass }} kg</li>
+		  	<li class="list-group-item"><strong>Height</strong> : {{ rocket.height }} meters</li>
+		  	<li class="list-group-item"><strong>Diameter</strong> : {{ rocket.diameter }} meters</li>
+		  	<li class="list-group-item"><strong>Stages</strong> : {{ rocket.stages }}</li>
+		  </ul>
+		</div>
+	</div>
+
+
+	{% if rocket.payload_to_leo or rocket.payload_to_sso %}
+	<div class="title" style="text-align:left" >
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Launch Capacity</div>
+		  <ul class="list-group">
+		  	{% if rocket.payload_to_leo %}
+		  	<li class="list-group-item"><strong>LEO</strong> : {{ rocket.payload_to_leo }} kg</li>
+		  	{% endif %}
+		  	{% if rocket.payload_to_sso %}
+		  	<li class="list-group-item"><strong>SSO</strong> : {{ rocket.payload_to_sso }} kg</li>
+		  	{% endif %}
+		  </ul>
+		</div>
+	</div>
+	{% endif %}
+
+	<hr/>
+
+	<a href="<%= wiki_url %>">View on Wikipedia</a>
+
+{% endblock %}
