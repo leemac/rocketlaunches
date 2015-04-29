@@ -1,83 +1,25 @@
 <div class="listing launch-row clearfix">
-	<div class="pull-left country">
+	<div class="col-flag">
 		<img src="static/images/flags/<%=country%>.png" /><br/>
 		<span class="status <%=status%>"><%=status%></span>
 	</div>	
-	<div class="pull-left" style="margin-left: 30px; width: 300px;">
-		<span class="title"><%=rocket_name%></span><br/>
+	<div class="col-meta">
+		<div class="title"><%=rocket_name%></div>
 		<% if(customer) { %>
-			<span class="meta">Customer: <%=customer%></span><br/>
+			<div class="meta">Customer: <%=customer%></div>
 		<% } %>
 		<% if(payload) { %>
-		<span class="meta">Payload: <%=payload%></span><br/>
+			<div class="meta">Payload: <%=payload%></div>
 		<% } %>
 		<% if(orbit) { %>
-		<span class="meta">Orbit: <%=orbit%></span><br/>
+			<div class="meta">Orbit: <%=orbit%></div>
 		<% } %>
 	</div>	
-	<div class="pull-right text-right">
+	<div class="col-countdown">
 		<% if(launch_date_tbd) { %>
 			<span class="time"><%=launch_date_date%></span>
 		<% } else if(launch_date_formatted) { %>
-			<span class="time"><%=launch_date_formatted%></span> <br/>
-			<small>(Local Time)</small>
+			<span class="time"><%=launch_date_formatted%></span>
 		<% } %>
 	</div>	
 </div>
-
-<!--<td class="text-center">
-	<img src="static/images/flags/<%=country%>.png" />
-</td>
-<td>
-	<strong><%=rocket_name%></strong>
-	<% if(remarks) { %>
-		<span class="text-info" data-toggle="tooltip" title="" data-original-title="<%=remarks%>"><i class="fa fa-lightbulb-o"></i></span>
-	<% } %>
-	<div>
-		<small><%=payload%></small>
-	</div>
-	<span class="visible-xs" data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
-		<small><%=launch_date_human%></small>
-	</span>
-</td>
-<td class="visible-lg visible-md visible-sm">
-	<span data-toggle="tooltip" data-original-title="<%=launch_date_formatted%>">
-		<%=launch_date_human%>
-	</span>
-	<% if(is_close) { %>
-		<span class="text-warning" data-toggle="tooltip" data-original-title="This launch is happening very soon."><i class="fa fa-warning"></i></span>
-	<% } %>
-</td>
-<td class="visible-lg visible-md visible-sm">
-	<% if(orbit == "GSO") { %>
-		<a href="http://en.wikipedia.org/wiki/Geosynchronous_orbit" data-toggle="tooltip" data-original-title="Geosynchronous orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "GTO") { %>
-		<a href="http://en.wikipedia.org/wiki/Geostationary_transfer_orbit" data-toggle="tooltip" data-original-title="Geostationary transfer orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "LEO") { %>
-		<a href="http://en.wikipedia.org/wiki/Low_Earth_orbit" data-toggle="tooltip" data-original-title="Low Earth orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "L1") { %>
-		<a href="http://en.wikipedia.org/wiki/Lagrangian_point" data-toggle="tooltip" data-original-title="Lagrangian point" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "MEO") { %>
-		<a href="http://en.wikipedia.org/wiki/Medium_Earth_orbit" data-toggle="tooltip" data-original-title="Medium Earth orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "Molniya") { %>
-		<a href="http://en.wikipedia.org/wiki/Molniya_orbit" data-toggle="tooltip" data-original-title="Molniya orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } else if(orbit == "SSO") { %>
-		<a href="http://en.wikipedia.org/wiki/Sun-synchronous_orbit" data-toggle="tooltip" data-original-title="Sun-synchronous orbit" target="_blank" class="external"><%=orbit%></a>
-	<% } %>
-</td>
-<td class="visible-lg visible-md visible-sm">
-	<%=payload_purpose%>
-</td>
-<td class="text-center status-<%=status%>">
-	<%=status%>
-</td>
-<td class="text-center">
-	<% if (launch_url) { %>
-		<a href="<%=launch_url%>" class="video-link"><img src="static/images/video_providers/youtube.png" /></a>
-	<% } %>
-</td>
-<% if(window.isAuthenticated) { %>
-	<td class="col-md-2 text-center">
-		<a class="btn btn-default btn-edit">Edit</a>
-	</td>
-<% } %>-->

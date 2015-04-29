@@ -17,7 +17,10 @@ define(['backbone', 'moment'], function(Backbone, moment){
 			this.refreshCustomProperties();
 		},
 		url: function () {
-			return "api/launches/"
+			if(this.id)
+				return "api/launches/?id=" + this.id;
+
+			return "api/launches/";
 		},
 	  	validate: function (attrs) {
 	        if (!attrs.launch_date) {

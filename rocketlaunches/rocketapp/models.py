@@ -1,6 +1,16 @@
 from django.db import models
 from datetime import datetime, date
 
+class Manufacturer(models.Model):
+	name = models.CharField(max_length=200)
+	country = models.CharField(max_length=10)
+	url = models.CharField(max_length=2000)
+	wiki_url = models.CharField(max_length=2000)
+	description = models.CharField(max_length=2000)
+
+	def __str__(self):
+		return self.name
+
 class Rocket(models.Model):
 	name = models.CharField(max_length=200)
 	stages = models.IntegerField()
@@ -23,6 +33,7 @@ class Rocket(models.Model):
 	country = models.CharField(max_length=10, blank=False)
 	created_date = models.DateTimeField('date created', default=datetime.now())
 	updated_date = models.DateTimeField('date updated', blank=True, null=True)
+	manufacturers = models.ManyToManyField(Manufacturer)
 
 	def __str__(self):
 		return self.name
@@ -47,6 +58,25 @@ class Launch(models.Model):
 	def __str__(self):
 		return self.rocket.name + ' ' + str(self.launch_date)
 
+class Payload(models.Model):
+	name = models.CharField(max_length=200)
+	url = models.CharField(max_length=2000)
+	wiki_url = models.CharField(max_length=2000)
+	description = models.CharField(max_length=2000)
+	manufacturers = models.ManyToManyField(Manufacturer)
+
+	def __str__(self):
+		return self.name
+
+class Organization(models.Model):
+	name = models.CharField(max_length=200)
+	url = models.CharField(max_length=2000)
+	wiki_url = models.CharField(max_length=2000)
+	description = models.CharField(max_length=2000)
+
+	def __str__(self):
+		return self.name
+
 class Subscriber(models.Model):
 	email = models.CharField(max_length=200, blank=False, null=False, default='')
 	active = models.BooleanField(blank=False, null=False, default=True)
@@ -55,3 +85,29 @@ class Subscriber(models.Model):
 
 	def __str__(self):
 		return self.email
+
+class LaunchArticle(models.Model):
+	text = models.CharField(max_length=200)
+	url = models.CharField(max_length=2000)
+	launch = models.ForeignKey(Launch, default='')
+
+	def __str__(self):
+		return self.text
+
+class LaunchVideo(models.Model):
+	text = models.CharField(max_length=200)
+	url = models.CharField(max_length=2000)
+	description = models.CharField(max_length=2000)
+	launch = models.ForeignKey(Launch, default='')
+
+	def __str__(self):
+		return self.text
+
+class PayloadVideo(models.Model):
+	text = models.CharField(max_length=200)
+	url = models.CharField(max_length=2000)
+	description = models.CharField(max_length=2000)
+	payload = models.ForeignKey(Payload, default='')
+
+	def __str__(self):
+		return self.text

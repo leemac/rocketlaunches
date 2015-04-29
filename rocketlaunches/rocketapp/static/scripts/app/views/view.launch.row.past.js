@@ -8,10 +8,14 @@ define([
 			template: _.template(ViewHtml),
 			tagName: 'div',
 			events: {
-				"click .btn-edit" : "editLaunchClick"
+				"click .btn-edit" : "editLaunchClick",
+				"click .listing" : "openClick"
 			},
 			initialize: function () {
 				EventBus.on('launch:edited:' + this.model.id, this.render, this.model);
+			},
+			openClick: function () {
+				location.href = "#/launches/" + this.model.get("id");
 			},
 			editLaunchClick: function()
 			{

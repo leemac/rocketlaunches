@@ -3,12 +3,14 @@ define([
 	'marionette',
 	'app/common/events',
 	'app/models/rocket',
+	'app/models/launch',
 	'app/regions/modal',
 	'app/views/view.home',
 	'app/views/view.about',
 	'app/views/view.stats',
 	'app/views/view.launch.modal',
 	'app/views/view.launches',
+	'app/views/view.launch.view',
 	'app/views/view.rockets',
 	'app/views/view.rocket.view',
 	'app/views/view.rocket.add',
@@ -20,6 +22,7 @@ define([
 		events, 
 		// Models
 		Rocket, 
+		Launch, 
 		// Regions
 		ModalRegion, 
 		// Views
@@ -28,6 +31,7 @@ define([
 		StatsView, 
 		LaunchModal,
 		LaunchesView, 
+		LaunchView, 
 		RocketsView, 
 		RocketView, 
 		RocketAddView,
@@ -40,7 +44,8 @@ define([
 				'rockets' : 'rockets', 
 				'rockets/add' : 'rockets_add', 
 				'rockets/:id' : 'rockets_view', 				
-				'launches' : 'launches', 
+				'launches' : 'launches', 			
+				'launches/:id' : 'launches_view', 
 				'stats' : 'stats', 
 				'about': 'about' 
 			} 
@@ -95,6 +100,18 @@ define([
 					rocket.fetch({
 						success: function () {
 							var view = new RocketView({ model : rocket });
+							ref.contentRegion.show(view);
+						}
+					});
+				});
+
+				this.router.on('route:launches_view', function(id) {      
+					
+					var launch = new Launch({id : id});
+					
+					launch.fetch({
+						success: function () {
+							var view = new LaunchView({ model : launch });
 							ref.contentRegion.show(view);
 						}
 					});

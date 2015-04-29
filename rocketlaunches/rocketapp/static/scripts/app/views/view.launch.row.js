@@ -13,7 +13,7 @@ define([
 			},
 			events: {
 				"click .btn-edit" : "editLaunchClick",
-				//"click .listing" : "expandClick"
+				"click .listing" : "openClick"
 			},
 			initialize: function () {
 				EventBus.on('launch:edited:' + this.model.id, this.render, this);
@@ -22,36 +22,8 @@ define([
 			{
 				EventBus.trigger('launch:edit', this.model);
 			},
-			expandClick: function () {
-				var ref = this;
-				var speed = 300;
-				var listing = this.$el.find(".listing");
-
-				listing.stop();
-
-				if(!this.isExpanded)
-				{						
-					this.isExpanded = true;
-					this.originalHeight = this.$el.height();
-
-					listing.animate({
-		                height : '400px'	
-	            	}, speed, 'swing', function () {
-						// TODO: Make this more marionette-like
-	            		ref.$el.find(".details").html(new RowDetailsView({ model : ref.model }).$el.html());
-	            	});
-				}
-				else
-				{
-					this.isExpanded = false;
-					
-					// TODO: Make this more marionette-like
-					ref.$el.find(".details").html("");
-
-					listing.animate({
-		                height : this.originalHeight + 'px'
-	            	}, speed, 'swing');
-				}
+			openClick: function () {
+				location.href = "#/launches/" + this.model.get("id");
 			},
 			render: function () {
 				this.$el.html(this.template(this.model.toJSON()));

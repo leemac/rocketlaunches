@@ -1,0 +1,18 @@
+{% extends "shared/__base.html" %}
+{% load humanize %}
+
+{% block content %}
+	<div class="page-title">
+		<h3>Rockets</h3>
+	</div>
+
+    {% for rocket in rockets %}
+    
+    <div class="listing clearfix">
+		<div class="pull-left">
+			{{ rocket.name }}
+		</div>	
+	</div>
+
+	{% endfor %}
+{% endblock %}

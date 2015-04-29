@@ -18,5 +18,7 @@ DATABASES = {
     }
 }
 
+SITEOFFLINE = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/rocket-messages' # change this to a proper location

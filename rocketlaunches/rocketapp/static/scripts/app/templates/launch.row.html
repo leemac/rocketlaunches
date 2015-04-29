@@ -1,20 +1,20 @@
 <div class="listing launch-row clearfix">
-	<div class="pull-left">
+	<div class="col-flag">
 		<img src="static/images/flags/<%=country%>.png" />
 	</div>	
-	<div class="pull-left" style="margin-left: 30px;">
-		<span class="title"><%=rocket_name%></span><br/>
+	<div class="col-meta">
+		<div class="title"><%=rocket_name%></div>
 		<% if(customer) { %>
-			<span class="meta">Customer: <%=customer%></span><br/>
+			<div class="meta">Customer: <%=customer%></div>
 		<% } %>
 		<% if(payload) { %>
-			<span class="meta">Payload: <%=payload%></span><br/>
+			<div class="meta">Payload: <%=payload%></div>
 		<% } %>
 		<% if(orbit) { %>
-		<span class="meta">Orbit: <%=orbit%></span><br/>
+			<div class="meta">Orbit: <%=orbit%></div>
 		<% } %>
 	</div>	
-	<div class="pull-right text-right">
+	<div class="col-countdown"> 
 		<% if(launch_date_tbd) { %>
 			<span class="time"><%=launch_date_date%></span><br/>
 			<small>(Expected)</small>
