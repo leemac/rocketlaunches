@@ -16,11 +16,15 @@
 			<div class="title">
 				<a href="{% url 'launches_view' launch.id %}">{{ launch.rocket.name }}</a> - <strong>{{launch.status}}</strong>
 			</div>
+			{% if launch.remarks %}
+				<div class="meta remarks">{{launch.remarks}}</div>
+			{% endif %}
+			<hr/>
 			{% if launch.customer %}
 				<div class="meta">Customer: {{launch.customer}}</div>
 			{% endif %}
 			{% if launch.payloads.all %}
-				<div class="meta">Payload(s):
+				<div class="meta">Payload(s):	
 				{% for payload in launch.payloads.all %}
 					<a href="{% url 'payloads_view' payload.id %}">{{ payload.name }}</a> 
 				{% endfor %}
@@ -35,6 +39,7 @@
 		</div>	
 		<div class="col-countdown"> 
 			{{ launch.launch_date|get_launch_displaytext }}
+			{{ launch.launch_date|get_launch_displaytext_extra|safe }}
 		</div>	
 	</div>
 
