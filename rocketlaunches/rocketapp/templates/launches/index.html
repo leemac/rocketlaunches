@@ -7,14 +7,14 @@
 
 	<div class="page-title">
 		<h3>All Launches</h3>
-	</div>
+	</div>ndex
 
     {% for launch in launches %}
 
     <div class="listing launch-row clearfix">
 		<div class="col-meta">
 			<div class="title">
-				<a href="{% url 'launches_view' launch.rocket.id %}">{{ launch.rocket.name }}</a>
+				<a href="{% url 'launches_view' launch.id %}">{{ launch.rocket.name }}</a>
 			</div>
 			{% if launch.customer %}
 				<div class="meta">Customer: {{launch.customer}}</div>
