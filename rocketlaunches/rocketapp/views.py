@@ -25,7 +25,7 @@ def index(request):
 
 @csrf_exempt
 def launches(request):
-	launches = Launch.objects.all().order_by('-launch_date')
+	launches = Launch.objects.all().filter(launch_date__lte=timezone.localtime(timezone.now())).order_by('-launch_date')
 
 	template = loader.get_template('launches/index.html')
 	context = RequestContext(request, {
