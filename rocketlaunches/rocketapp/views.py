@@ -36,7 +36,7 @@ def launches(request):
 
 @csrf_exempt
 def launches_view(request, id):
-	launch = Launch.objects.get(id=id)
+	launch = Launch.objects.get(pk=id)
 
 	template = loader.get_template('launches/single.html')
 	context = RequestContext(request, {
