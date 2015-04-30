@@ -31,21 +31,6 @@ td[class^="status-Partial"]
 	color: #FF0000;
 }
 
-header
-{
-	line-height: 37px;
-	margin: 0 auto;
-}
-
-
-
-header li
-{
-	display: inline;
-	margin: 0;
-	margin-right: 30px;
-}
-
 footer
 {
 	color: #888;
@@ -183,11 +168,6 @@ page-title
 }
 
 @media only screen and (max-device-width: 700px) {
-	header li
-	{
-		margin-right: 5px;
-	}
-
 	#main-menu a {
 		padding: 5px 10px;
 	}
@@ -217,7 +197,6 @@ page-title
 	{
 		text-align:center;
 	}
-
 }
 
 @media only screen and (min-device-width: 700px) {

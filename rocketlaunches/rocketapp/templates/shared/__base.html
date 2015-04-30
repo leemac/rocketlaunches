@@ -21,18 +21,28 @@
 </head>
 <body>
 	<div class="container">
-		<header>	   
-			<h1>
-				rocketlaunches <sup>beta</sup>
-			</h1>
-			<ul id="main-menu">
-				<li><a href="{% url 'home' %}">Home</a></li>
-				<li><a href="{% url 'launches' %}">Past Launches</a></li>
-				<li><a href="{% url 'rockets' %}">Rockets</a></li>
-				<li><a href="{% url 'payloads' %}">Payloads</a></li>
-				<li><a href="{% url 'about' %}">About</a></li>
-			</ul>
-		</header>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+					<div class="navbar-header">
+			        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			          <span class="sr-only">Toggle navigation</span>
+			          <span class="icon-bar"></span>
+			          <span class="icon-bar"></span>
+			          <span class="icon-bar"></span>
+			        </button>
+			        <h1><a class="navbar-brand" href="{% url 'home' %} <li class="{% if nbar == 'home' %}active{% endif %}">RocketLaunches</a></h1>
+			      </div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="{% if navlocation == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
+						<li class="{% if navlocation == 'launches' %}active{% endif %}"><a href="{% url 'launches' %}">Launches</a></li>
+						<li class="{% if navlocation == 'rockets' %}active{% endif %}"><a href="{% url 'rockets' %}">Rockets</a></li>
+						<li class="{% if navlocation == 'payloads' %}active{% endif %}"><a href="{% url 'payloads' %}">Payloads</a></li>
+						<li class="{% if navlocation == 'about' %}active{% endif %}"><a href="{% url 'about' %}">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		<hr />
 

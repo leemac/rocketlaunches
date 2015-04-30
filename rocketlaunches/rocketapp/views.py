@@ -19,6 +19,7 @@ def index(request):
 	template = loader.get_template('index.html')
 	context = RequestContext(request, {
 		'launches': launches,
+		'navlocation': 'home',
 	})
 	
 	return HttpResponse(template.render(context))
@@ -30,6 +31,7 @@ def launches(request):
 	template = loader.get_template('launches/index.html')
 	context = RequestContext(request, {
 		'launches': launches,
+		'navlocation': 'launches',
 	})
 
 	return HttpResponse(template.render(context))
@@ -40,7 +42,8 @@ def launches_view(request, id):
 
 	template = loader.get_template('launches/single.html')
 	context = RequestContext(request, {
-		'launch': launch
+		'launch': launch,
+		'navlocation': 'launches',
 	})
 
 	return HttpResponse(template.render(context))
@@ -52,6 +55,7 @@ def payloads(request):
 	template = loader.get_template('payloads/index.html')
 	context = RequestContext(request, {
 		'payloads': payloads,
+		'navlocation': 'payloads',
 	})
 
 	return HttpResponse(template.render(context))
@@ -63,6 +67,7 @@ def payloads_view(request, id):
 	template = loader.get_template('payloads/single.html')
 	context = RequestContext(request, {
 		'payload': payload,
+		'navlocation': 'payloads',
 	})
 
 	return HttpResponse(template.render(context))
@@ -74,6 +79,7 @@ def rockets(request):
 	template = loader.get_template('rockets/index.html')
 	context = RequestContext(request, {
 		'rockets': rockets,
+		'navlocation': 'rockets',
 	})
 
 	return HttpResponse(template.render(context))
@@ -85,13 +91,16 @@ def rockets_view(request, id):
 	template = loader.get_template('rockets/single.html')
 	context = RequestContext(request, {
 		'rocket': rocket,
+		'navlocation': 'rockets',
 	})
 
 	return HttpResponse(template.render(context))
 
 def about(request):
 	template = loader.get_template('about.html')
-	context = RequestContext(request)
+	context = RequestContext(request, {
+		'navlocation': 'about'
+	})
 
 	return HttpResponse(template.render(context))
 
