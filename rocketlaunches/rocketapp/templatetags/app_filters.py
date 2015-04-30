@@ -1,8 +1,7 @@
 from django import template
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.utils import timezone
 from django.contrib.humanize.templatetags import humanize
-
 
 register = template.Library()
 
