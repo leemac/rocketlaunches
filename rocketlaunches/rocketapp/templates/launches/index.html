@@ -19,8 +19,12 @@
 			{% if launch.customer %}
 				<div class="meta">Customer: {{launch.customer}}</div>
 			{% endif %}
-			{% if launch.payload %}
-				<div class="meta">Payload: {{launch.payload}}</div>
+			{% if launch.payloads.all %}
+				<div class="meta">Payload(s):
+				{% for payload in launch.payloads.all %}
+					<a href="{% url 'payloads_view' payload.id %}">{{ payload.name }}</a> 
+				{% endfor %}
+				</div>
 			{% endif %}
 			{% if launch.orbit %}
 				<div class="meta">Orbit: {{launch.orbit}}</div>
