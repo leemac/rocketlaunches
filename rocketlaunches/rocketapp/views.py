@@ -6,7 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from django.template import RequestContext, loader
 from datetime import datetime, timedelta, time
-from urllib.parse import urlparse, parse_qs
 
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -39,40 +38,12 @@ def launches(request):
 def launches_view(request, id):
 	launch = Launch.objects.get(id=id)
 
-	youtubeIdentifier = ""
-
-	if launch.launch_url:
-		youtubeIdentifier = video_id(launch.launch_url)
-
 	template = loader.get_template('launches/single.html')
 	context = RequestContext(request, {
-		'launch': launch,
-		'youtubeIdentifier': youtubeIdentifier
+		'launch': launch
 	})
 
 	return HttpResponse(template.render(context))
-
-def video_id(value):
-    """
-    Examples:
-    - http://youtu.be/SA2iWivDJiE
-    - http://www.youtube.com/watch?v=_oPAwA_Udwc&feature=feedu
-    - http://www.youtube.com/embed/SA2iWivDJiE
-    - http://www.youtube.com/v/SA2iWivDJiE?version=3&amp;hl=en_US
-    """
-    query = urlparse(value)
-    if query.hostname == 'youtu.be':
-        return query.path[1:]
-    if query.hostname in ('www.youtube.com', 'youtube.com'):
-        if query.path == '/watch':
-            p = parse_qs(query.query)
-            return p['v'][0]
-        if query.path[:7] == '/embed/':
-            return query.path.split('/')[2]
-        if query.path[:3] == '/v/':
-            return query.path.split('/')[2]
-    # fail?
-    return ""
 
 @csrf_exempt
 def payloads(request):

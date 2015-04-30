@@ -5,7 +5,7 @@ def deploy():
     with cd(run_dir):
         run("git pull origin master")    
         run('sudo pip install -r requirements.txt')      
-        run('python rocketlaunches/manage.py migrate')      
+        run('python3 rocketlaunches/manage.py migrate')      
 
 # Start, Restart, stop
 
@@ -32,6 +32,6 @@ def build():
 def update_data():
     run_dir = '/srv/www/rocketlaunches.org/rocketlaunches'
     with cd(run_dir):
-        run("python manage.py migrate --settings=rocketlaunches.settings.production")    
-        run("python manage.py loaddata rockets.json --settings=rocketlaunches.settings.production")    
-        run("python manage.py import_data --settings=rocketlaunches.settings.production")    
+        run("python3 manage.py migrate --settings=rocketlaunches.settings.production")    
+        run("python3 manage.py loaddata rockets.json --settings=rocketlaunches.settings.production")    
+        run("python3 manage.py import_data --settings=rocketlaunches.settings.production")    
