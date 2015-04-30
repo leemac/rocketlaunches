@@ -14,7 +14,7 @@
     <div class="listing launch-row clearfix">
 		<div class="col-meta">
 			<div class="title">
-				<a href="{% url 'launches_view' launch.id %}">{{ launch.rocket.name }}</a>
+				<a href="{% url 'launches_view' launch.id %}">{{ launch.rocket.name }}</a> - <strong>{{launch.status}}</strong>
 			</div>
 			{% if launch.customer %}
 				<div class="meta">Customer: {{launch.customer}}</div>

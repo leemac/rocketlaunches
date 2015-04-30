@@ -262,6 +262,11 @@ page-title
 	padding-bottom: 10px;
 }
 
+.listing .status
+{
+	font-size: 14px;
+}
+
 .listing .meta
 {
 	font-size: 12px;
@@ -281,12 +286,6 @@ page-title
 {
 	text-align: center;
 	width: 65px;
-}
-
-.listing .status
-{
-	font-weight: 600;
-	font-size: 12px;
 }
 
 .listing .status.Success
