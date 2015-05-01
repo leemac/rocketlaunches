@@ -18,7 +18,7 @@ def get_launch_displaytext(value):
 def get_launch_displaytext_extra(value):
 	today = timezone.now()
 
-	if value > today:
+	if value > today.datetime.utcnow().replace(tzinfo=utc):
 		theTime = value.strftime('%A %B %e %y at %l:%M %p')
 		html = "<br/><small title='" + theTime + "'>" + theTime + " Local Time</small>"
 
