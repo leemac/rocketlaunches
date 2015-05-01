@@ -7,12 +7,7 @@ register = template.Library()
 
 @register.filter(name='get_launch_displaytext')
 def get_launch_displaytext(value):
-	today = timezone.now()
-
-	if value < today:
-		return value.strftime('%A %B %e %y at %l:%M %p')
-	else:
-		return humanize.naturaltime(value)
+	return value.strftime('%A %B %e %y at %l:%M %p')
 
 @register.filter(name='get_launch_displaytext_extra')
 def get_launch_displaytext_extra(value):
