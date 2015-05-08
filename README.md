@@ -18,3 +18,7 @@ This is very alpha at the moment. The frontend is Backbone/Marionette with a DJa
 - Powerful alerts to warn you of a launch or cancelled launches.
 
 More features tbd
+
+==Todo==
+
+- Write scraper to crawl rocket listings such as http://nssdc.gsfc.nasa.gov/nmc/spacecraftSearch.do
