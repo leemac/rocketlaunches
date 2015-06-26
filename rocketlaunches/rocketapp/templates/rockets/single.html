@@ -1,54 +1,102 @@
 {% extends "shared/__base.html" %}
 {% load humanize %}
+{% load app_filters %}
 
 {% block content %}	
 	<div class="page-title">
 		<h3>{{rocket.name}}</h3>
 	</div>
-	<hr/>
+	<hr/>	
+	<div class="row">
+		<div class="col-md-7">	
+			<div class="title" style="text-align:left" >
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Launches</div>
+				  <div class="table-responsive table-condensed">
+					  <table class="table">
+						<tr>
+							<th>Status</th>
+							<th>Date</th>
+							<th>Payloads</th>
+							<th>Orbit</th>
+						</tr>
+			 			{% for launch in rocket.launches.all %}
+			 				{% if launch.status = "Success" %}
+				 			<tr class="success">
+				 			{% elif launch.status = "Failure" %}
+				 			<tr class="danger">
+				 			{% else %}
+				 			<tr>
+			 				{% endif %}
+					 			<td>{{launch.status}}</td>
+					 			<td><a href="{% url 'launches_view' launch.id %}">{{ launch.launch_date|get_launch_displaytext }}</a></td>
+					 			<td>
+					 				{% if launch.payloads.all %}
+										<div class="meta">Payload(s):	
+										{% for payload in launch.payloads.all %}
+											<a href="{% url 'payloads_view' payload.id %}">{{ payload.name }}</a> 
+										{% endfor %}
+										</div>
+									{% endif %}			 				
+					 			</td>
+					 			<td>
+					 				{% if launch.orbit %}
+										<div class="meta">Orbit: {{launch.orbit}}</div>
+									{% endif %}
+					 			</td>
+					 		</tr>
+						{% endfor %}
+					  </table>
+					</div>		
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="title" style="text-align:left" >
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Rocket Details</div>
+				  <ul class="list-group">
+				  	<li class="list-group-item"><strong>Manufacturer</strong> : <a href="{{ rocket.manufacturer_url }}">{{ manufacturer }}</a></li>
+				  	<li class="list-group-item"><strong>Status</strong> : {{ rocket.status }}</li>
+				  	<li 	class="list-group-item"><strong>Function</strong> : {{ rocket.rocket_function }}</li>
+				  </ul>
+				</div>
+			</div>
 
-	<div class="title" style="text-align:left" >
-		<div class="panel panel-default">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading">Rocket Details</div>
-		  <ul class="list-group">
-		  	<li class="list-group-item"><strong>Manufacturer</strong> : <a href="{{ rocket.manufacturer_url }}">{{ manufacturer }}</a></li>
-		  	<li class="list-group-item"><strong>Status</strong> : {{ rocket.status }}</li>
-		  	<li class="list-group-item"><strong>Function</strong> : {{ rocket.rocket_function }}</li>
-		  </ul>
+			<div class="title" style="text-align:left" >
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Physical Characteristics</div>
+				  <ul class="list-group">
+				  	<li class="list-group-item"><strong>Mass</strong> : {{ rocket.mass }} kg</li>
+				  	<li class="list-group-item"><strong>Height</strong> : {{ rocket.height }} meters</li>
+				  	<li class="list-group-item"><strong>Diameter</strong> : {{ rocket.diameter }} meters</li>
+				  	<li class="list-group-item"><strong>Stages</strong> : {{ rocket.stages }}</li>
+				  </ul>
+				</div>
+			</div>
+
+
+			{% if rocket.payload_to_leo or rocket.payload_to_sso %}
+			<div class="title" style="text-align:left" >
+				<div class="panel panel-default">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">Launch Capacity</div>
+				  <ul class="list-group">
+				  	{% if rocket.payload_to_leo %}
+				  	<li class="list-group-item"><strong>LEO</strong> : {{ rocket.payload_to_leo }} kg</li>
+				  	{% endif %}
+				  	{% if rocket.payload_to_sso %}
+				  	<li class="list-group-item"><strong>SSO</strong> : {{ rocket.payload_to_sso }} kg</li>
+				  	{% endif %}
+				  </ul>
+				</div>
+			</div>
+			{% endif %}
 		</div>
 	</div>
-
-	<div class="title" style="text-align:left" >
-		<div class="panel panel-default">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading">Physical Characteristics</div>
-		  <ul class="list-group">
-		  	<li class="list-group-item"><strong>Mass</strong> : {{ rocket.mass }} kg</li>
-		  	<li class="list-group-item"><strong>Height</strong> : {{ rocket.height }} meters</li>
-		  	<li class="list-group-item"><strong>Diameter</strong> : {{ rocket.diameter }} meters</li>
-		  	<li class="list-group-item"><strong>Stages</strong> : {{ rocket.stages }}</li>
-		  </ul>
-		</div>
-	</div>
-
-
-	{% if rocket.payload_to_leo or rocket.payload_to_sso %}
-	<div class="title" style="text-align:left" >
-		<div class="panel panel-default">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading">Launch Capacity</div>
-		  <ul class="list-group">
-		  	{% if rocket.payload_to_leo %}
-		  	<li class="list-group-item"><strong>LEO</strong> : {{ rocket.payload_to_leo }} kg</li>
-		  	{% endif %}
-		  	{% if rocket.payload_to_sso %}
-		  	<li class="list-group-item"><strong>SSO</strong> : {{ rocket.payload_to_sso }} kg</li>
-		  	{% endif %}
-		  </ul>
-		</div>
-	</div>
-	{% endif %}
 
 	<hr/>
 

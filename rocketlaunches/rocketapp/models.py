@@ -63,7 +63,7 @@ class Payload(models.Model):
 
 class Launch(models.Model):
 	country = models.CharField(max_length=10, blank=False, null=False, default='')
-	rocket = models.ForeignKey(Rocket, default='')
+	rocket = models.ForeignKey(Rocket, default='', related_name='launches')
 	payloads = models.ManyToManyField(Payload, default='')
 	remarks = models.CharField(max_length=2000, blank=True, null=True)
 	customer = models.CharField(max_length=2000, blank=True, null=True)
