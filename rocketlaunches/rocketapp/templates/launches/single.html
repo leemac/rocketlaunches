@@ -17,8 +17,12 @@
 			</div>
 		</div>
 	</div>
+	{% if launch.launch_url %}
+		<div class="movie_viewer">
+			<iframe src="{{launch.launch_url}}" frameborder="0" allowfullscreen></iframe>
+		</div>
+	{% endif %}
 	<hr/>
-
 	<div class="row">
 		<div class="col-md-6">		
 			<div class="title" style="text-align:left" >
@@ -38,26 +42,14 @@
 				  </ul>
 				</div>
 			</div>
-			{% if launch.launch_url %}
-			<div class="title" style="text-align:left" >
-				<div class="panel panel-default">
-					<!-- Default panel contents -->
-					<div class="panel-heading">Watch the Launch</div>
-					<div class="text-center" style="padding: 10px">
-						<a title="Click to watch on YouTube" href="{{launch.launch_url}}"><img src="{{ STATIC_URL }}images/video_providers/youtube.png" />	</a>
-					</div>
-				</div>
-			</div>
-			{% endif %}
 		</div>
 		<div class="col-md-6">
-			<h3>{{launch.rocket.name}}</h3>
-			<h6>Rocket Details</h6>
 			<div class="title" style="text-align:left" >
 				<div class="panel panel-default">
 				  <!-- Default panel contents -->
 				  <div class="panel-heading">Rocket Details</div>
 				  <ul class="list-group">
+				  	<li class="list-group-item"><strong>Rocket</strong> : <a href="{% url 'rockets_view' launch.rocket.id %}">{{launch.rocket.name}}</a></li>
 				  	<li class="list-group-item"><strong>Manufacturer</strong> : <a href="{{ rocket.manufacturer_url }}">{{ launch.rocket.manufacturer }}</a></li>
 				  	<li class="list-group-item"><strong>Function</strong> : {{ launch.rocket.rocket_function }}</li>
 				  </ul>

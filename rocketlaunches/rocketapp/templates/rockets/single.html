@@ -21,7 +21,7 @@
 							<th>Payloads</th>
 							<th>Orbit</th>
 						</tr>
-			 			{% for launch in rocket.launches.all %}
+			 			{% for launch in rocket.launches.all|dictsortreversed:"launch_date" %}
 			 				{% if launch.status = "Success" %}
 				 			<tr class="success">
 				 			{% elif launch.status = "Failure" %}
@@ -97,9 +97,5 @@
 			{% endif %}
 		</div>
 	</div>
-
-	<hr/>
-
-	<a href="<%= wiki_url %>">View on Wikipedia</a>
 
 {% endblock %}

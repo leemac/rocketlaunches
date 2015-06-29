@@ -155,7 +155,7 @@ page-title
 }
 
 .listing {
-	background-color: #FAFAFA;
+	background-color: #ECECEC;
 	font-weight: 300;
 	font-size: 16px;
 	margin: 0 auto 15px;
@@ -279,4 +279,18 @@ page-title
 .listing .status.Failure
 {
 	color: red;
+}
+
+.movie_viewer
+{
+	background-color: #101010;
+	padding: 20px;
+}
+
+.movie_viewer iframe
+{
+	display:block;
+	margin: 0 auto;
+	height: 350px;
+	width: 700px;
 }
