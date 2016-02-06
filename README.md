@@ -1,11 +1,11 @@
-rocketlaunches
+## Rocket Launches
 ==============
 
 RocketLaunches.org aims to be an informational site in regards to rocket launches around the world. It will contain statistics on launches, details of the rockets and a way to be alerted when launches are about to occur.
 
 This is very alpha at the moment. The frontend is Backbone/Marionette with a DJango/Postgresql backend.
 
-== Features ==
+## Features
 
 - View past and future launches quickly and easily
 - Launch Pages
@@ -19,6 +19,6 @@ This is very alpha at the moment. The frontend is Backbone/Marionette with a DJa
 
 More features tbd
 
-==Todo==
+## Todo 
 
 - Write scraper to crawl rocket listings such as http://nssdc.gsfc.nasa.gov/nmc/spacecraftSearch.do
