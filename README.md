@@ -1,4 +1,4 @@
-## Rocket Launches
+# Rocket Launches
 
 RocketLaunches.org aims to be an informational site in regards to rocket launches around the world. It will contain statistics on launches, details of the rockets and a way to be alerted when launches are about to occur.
 
