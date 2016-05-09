@@ -1,0 +1,26 @@
+<div class="listing launch-row clearfix">
+	<div class="col-flag">
+		<img src="static/images/flags/<%=country%>.png" />
+	</div>	
+	<div class="col-meta">
+		<div class="title"><%=rocket_name%></div>
+		<% if(customer) { %>
+			<div class="meta">Customer: <%=customer%></div>
+		<% } %>
+		<% if(payload) { %>
+			<div class="meta">Payload: <%=payload%></div>
+		<% } %>
+		<% if(orbit) { %>
+			<div class="meta">Orbit: <%=orbit%></div>
+		<% } %>
+	</div>	
+	<div class="col-countdown"> 
+		<% if(launch_date_tbd) { %>
+			<span class="time"><%=launch_date_date%></span><br/>
+			<small>(Expected)</small>
+		<% } else if(launch_date_formatted) { %>
+			<span class="countdown time" js-launch-date="<%=launch_date%>"></span><br/>
+			<small><%=launch_date_formatted%> Local Time</small>
+		<% } %>
+	</div>	
+</div>

@@ -1,0 +1,66 @@
+{% extends "shared/__base.html" %}
+
+{% load humanize %}
+{% load app_filters %}
+
+{% block content %}
+
+	<div class="page-title">
+		<h3>Launches</h3>
+	</div>
+
+    {% for launch in launches %}
+
+    <div class="listing launch-row clearfix">
+		<div class="col-meta">
+			<div class="title">
+				<a href="{% url 'launches_view' launch.id %}">{{ launch.rocket.name }} 
+				<strong>{{launch.status}}</strong>
+				{% if launch.launch_url %}
+					<img src="{{ STATIC_URL }}images/video_providers/youtube_small.png" title="Video" />
+				{% endif %}
+				</a>
+			</div>
+			{% if launch.remarks %}
+				<div class="meta remarks">{{launch.remarks}}</div>
+			{% endif %}
+			<hr/>
+			{% if launch.customer %}
+				<div class="meta">Customer: {{launch.customer}}</div>
+			{% endif %}
+			{% if launch.payloads.all %}
+				<div class="meta">Payload(s):	
+				{% for payload in launch.payloads.all %}
+					<a href="{% url 'payloads_view' payload.id %}">{{ payload.name }}</a> 
+				{% endfor %}
+				</div>
+			{% endif %}
+			{% if launch.orbit %}
+				<div class="meta">Orbit: {{launch.orbit}}</div>
+			{% endif %}
+			{% if launch.country %}
+				<div class="meta">Country: <img src="{{ STATIC_URL }}images/flags/{{ launch.country }}.png" style="width: 16px;" /></div>
+			{% endif %}
+		</div>	
+		<div class="col-countdown"> 
+			{{ launch.launch_date|get_launch_displaytext }}
+		</div>	
+	</div>
+
+	{% endfor %}
+
+	<script>
+		$(function () {
+			$(".countdown").each(function () {
+				var date = $(this).attr("js-launch-date");
+
+				countdown(new Date(date),
+						    function(ts) {
+						      $(this).html(ts.toHTML());
+						    },
+						    countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS);
+			});
+	
+		});
+	</script>
+{% endblock %}

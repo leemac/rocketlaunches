@@ -1,21 +1,32 @@
-"""rocketlaunches URL Configuration
+#from django.conf.urls import patterns, include, url
+#from django.contrib import admin
+#from rest_framework import routers
+#from rocketapp import views
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
-from django.conf.urls import url
-from django.contrib import admin
+#from django.contrib.auth import views
+
+from django.conf.urls import include, url
+
+# Routers provide an easy way of automatically determining the URL conf.
+#router = routers.DefaultRouter()
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+	# Examples:
+	# url(r'^$', 'rocketlaunches.views.home', name='home'),
+	# url(r'^blog/', include('blog.urls')),
+    	url(r'', include('rocketapp.urls')),
+	# url(r'^launches/(?P<id>[0-9]+)/$', views.launches_view, name='launches_view'),
+	# url(r'^rockets/(?P<id>[0-9]+)/$', views.rockets_view, name='rockets_view'),
+	# url(r'^payloads/(?P<id>[0-9]+)/$', views.payloads_view, name='payloads_view'),
+
+	# url(r'^launches/', views.launches, name='launches'),
+	# url(r'^rockets/', views.rockets, name='rockets'),
+	# url(r'^payloads/', views.payloads, name='payloads'),
+	
+	# url(r'^about/', views.about, name='about'),
+	# url(r'^api/subscribers/', views.subscribers),
+	# url(r'^api/launches/', views.launches),
+	# url(r'^api/rockets/', views.rockets),
+	# url(r'^admin/', include(admin.site.urls)),
+	# url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

@@ -1,0 +1,122 @@
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Edit Launch</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger hide">
+
+        </div>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-3 control-label">Rocket</label>
+            <div class="col-sm-8">
+              <select class="form-control combo-rocket">
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-3 control-label">Status</label>
+            <div class="col-sm-4">
+             <select class="form-control combo-status">
+              <option></option>
+               <option>Scheduled</option>
+               <option>Success</option>
+               <option>Failure</option>
+               <option>Cancelled</option>
+               <option>Postponed</option>
+               <option>TBD</option>
+               <option>N/A</option>
+             </select>
+           </div>
+         </div>
+         <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Date/Time (UTC)</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="input-launch-date-date" value="<%=launch_date_date %>" />
+          </div>  
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="input-launch-date-time" value="<%=launch_date_time %>" />
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" id="input-launch-date-timezone" value="EST" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Date is TBD</label>
+          <div class="checkbox col-sm-3">
+            <label>
+              <% if(launch_date_tbd) { %>
+                <input class="checkbox-tbd" type="checkbox" checked="checked"> 
+              <% } else { %>
+                <input class="checkbox-tbd" type="checkbox"> 
+              <% } %>              
+            </label>
+          </div>
+        </div>
+     
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Payload</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-payload" value="<%=payload %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Purpose</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-purpose" value="<%=payload_purpose %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Orbit</label>
+          <div class="col-sm-4">
+            <select class="form-control combo-orbit">
+              <option></option>
+              <option>LEO</option>
+              <option>L1</option>
+              <option>MEO</option>
+              <option>Molniya</option>
+              <option>GSO</option>
+              <option>GTO</option>
+              <option>SSO</option>
+              <option>N/A</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Video</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-launch-url" value="<%=launch_url %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Country</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-country" value="<%=country %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Customer</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-customer" value="<%=customer %>"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-3 control-label">Customer Url</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="input-customer-url" value="<%=customer_url %>"/>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

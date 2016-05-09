@@ -1,0 +1,52 @@
+<div class="page-title">
+	<h5>Viewing Rocket</h5>
+	<h3><%=name%></h3>
+</div>
+<hr/>
+<div class="row">
+	<div class="col-2">
+<div class="title" style="text-align:left" >
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Rocket Details</div>
+	  <ul class="list-group">
+	  	<li class="list-group-item"><strong>Manufacturer</strong> : <a href="<%= manufacturer_url %>"><%=manufacturer%></a></li>
+	  	<li class="list-group-item"><strong>Status</strong> : <%=status%></li>
+	  	<li class="list-group-item"><strong>Function</strong> : <%=rocket_function	%></li>
+	  </ul>
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="title" style="text-align:left" >
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Physical Characteristics</div>
+	  <ul class="list-group">
+	  	<li class="list-group-item"><strong>Mass</strong> : <%=mass/1000%> kg</li>
+	  	<li class="list-group-item"><strong>Height</strong> : <%=height%> meters</li>
+	  	<li class="list-group-item"><strong>Diameter</strong> : <%=diameter%> meters</li>
+	  	<li class="list-group-item"><strong>Stages</strong> : <%=stages%></li>
+	  </ul>
+	</div>
+</div>
+
+<div class="title" style="text-align:left" >
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Launch Capacity</div>
+	  <ul class="list-group">
+	  	<% if(payload_to_leo) { %>
+	  	<li class="list-group-item"><strong>LEO</strong> : <%=payload_to_leo/1000%> kg</li>
+	  	<% } %>
+	  	<% if(payload_to_sso) { %>
+	  	<li class="list-group-item"><strong>SSO</strong> : <%=payload_to_sso%> kg</li>
+	  	<% } %>
+	  </ul>
+	</div>
+</div>
+
+<hr/>
+
+<a href="<%= wiki_url %>">View on Wikipedia</a>
