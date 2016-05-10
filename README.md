@@ -20,4 +20,6 @@ More features tbd
 
 ## Todo 
 
+- Update to django 1.9
+- Evaluate where I left off
 - Write scraper to crawl rocket listings such as http://nssdc.gsfc.nasa.gov/nmc/spacecraftSearch.do
